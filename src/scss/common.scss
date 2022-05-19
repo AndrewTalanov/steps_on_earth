@@ -23,7 +23,7 @@ html, body {
 
 body {
   scroll-behavior: smooth;
-  background:  url("@img/back/stars.png"), 100% 0 / 100% url("@img/back/gradient.png") no-repeat,  0 0 / 100% 165px url("@img/back/header.png") no-repeat, #08102E;
+  background:  url("@img/back/stars.png"), 100% 0 / 100% url("@img/back/gradDAient.png") no-repeat,  0 0 / 100% 165px url("@img/back/header.png") no-repeat, #08102E;
 }
 
 .wrapper {
@@ -34,7 +34,10 @@ body {
 ul {
   list-style-type: none;
 }
-ul, li {
+
+h1, h2, h3, p, a, li, ul {
+  color: white;
   margin: 0;
   padding: 0;
 }
+
