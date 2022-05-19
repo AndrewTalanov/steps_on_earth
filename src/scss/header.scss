@@ -1,0 +1,44 @@
+.header {
+  width: 100%;
+
+  &-inner {
+    height: 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .search {
+      position: relative;
+      &__icon {
+         
+      }
+      &__nav {
+        display: none;
+
+        position: absolute;
+        right: -25px;
+        top: -15px;
+
+        border-radius: 50px;
+        background: 
+          linear-gradient( rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)) padding-box,
+          linear-gradient( to right, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0)) border-box;
+        border: 1px solid transparent;
+        padding: 50px 0 45px 0;
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          li {
+            display: flex;
+            gap: 27px;
+            align-items: center;
+            padding: 0 95px 0 37px;
+            color: white;
+            font-weight: 900;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}

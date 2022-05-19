@@ -1,1 +1,40 @@
 // Заголовки, общие БЄМ блоки и проче...
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* ширина для вертикального скролла */
+  height: 1px; /* высота для горизонтального скролла */
+  background-color: #143861;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: #215999;
+  border-radius: 9em;
+  box-shadow: inset 1px 1px 10px #215999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #253861;
+}
+
+body {
+  scroll-behavior: smooth;
+  background:  url("@img/back/stars.png"), 100% 0 / 100% url("@img/back/gradient.png") no-repeat,  0 0 / 100% 165px url("@img/back/header.png") no-repeat, #08102E;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+}
