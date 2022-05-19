@@ -50,7 +50,7 @@
                 background: rgba(255, 255, 255, 0.1);
                 box-shadow: 7px 10px 6px rgba(0, 0, 0, 0.25);
                 height: 165px;
-                width: 45.1%;
+                width: 64.1%;
                 transition: 1s;
                 transition-property: height, width, background-color;
 
@@ -114,7 +114,7 @@
                                     rgba(0, 255, 240, 0.5) 0%,
                                     rgba(255, 255, 255, 0) 100%);
 
-                            width: 32.5%;
+                            width: 39.7%;
                             height: max-content;
                             border-radius: 30px;
                             display: flex;
@@ -160,17 +160,12 @@
                         .phase__image {
                             .karhey-moon-img {
                                 position: absolute;
-                                width: 200px;
                                 top: 55%;
                                 right: 100%;
                             }
 
                             position: relative;
                             top: 70px;
-
-                            & img {
-                                width: 585px;
-                            }
                         }
                     }
 
