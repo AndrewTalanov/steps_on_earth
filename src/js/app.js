@@ -1,4 +1,5 @@
 import "../scss/style.scss";
+import anime from 'animejs/lib/anime.es.js';
 
 import * as flsFunctions from "./files/functions.js";
 
@@ -28,3 +29,12 @@ for (var i = 0; i < tabNavs.length; i++) {
         }
     });
 }
+
+
+
+
+anime({
+    targets: '.active',
+    // translateX: 25,
+    width: 1000
+});
