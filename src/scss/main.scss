@@ -95,7 +95,7 @@
                 &.active {
                     display: flex;
                     flex-direction: column;
-                    gap: 100px;
+                    gap: 220px;
                 }
 
                 &__precambrian-container {
@@ -103,7 +103,8 @@
 
                     .precambrian__container-item {
                         display: flex;
-                        gap: 75px;
+                        gap: 105px;
+
 
                         .phase__discription {
                             background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
@@ -157,7 +158,7 @@
                         .phase__image {
                             .karhey-moon-img {
                                 position: absolute;
-                                top: 55%;
+                                top: 65%;
                                 right: 100%;
                             }
 
