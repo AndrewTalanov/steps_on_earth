@@ -6,8 +6,11 @@
     display: flex;
     align-items: center;
     gap: 30px;
+<<<<<<< HEAD
     margin-bottom: 75px;
 
+=======
+>>>>>>> bf1e7553f4d31beb87effc2ba9c0470f9500779a
     p {
       font-size: 24px;
     }
@@ -18,13 +21,22 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+<<<<<<< HEAD
 
+=======
+    &__margin {
+      margin-top: 50px;
+    }
+>>>>>>> bf1e7553f4d31beb87effc2ba9c0470f9500779a
     .group-wrapper {
       width: 100%;
       display: flex;
       justify-content: center;
+<<<<<<< HEAD
       margin-bottom: 50px;
 
+=======
+>>>>>>> bf1e7553f4d31beb87effc2ba9c0470f9500779a
       &__title {
         text-align: center;
         width: 354px;
@@ -52,6 +64,7 @@
     }
 
     .item {
+      margin: 50px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
