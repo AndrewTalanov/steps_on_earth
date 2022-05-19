@@ -1,0 +1,93 @@
+.section-tabs {
+
+    .tabs {
+
+        // .tabs__nav
+
+        &__nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & p {
+                font-style: italic;
+                font-weight: 400;
+                font-size: 28px;
+                opacity: 0;
+            }
+        }
+
+        // .tabs__nav-item
+
+        &__nav-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 48px;
+            font-weight: 800;
+            height: 215px;
+            width: 45.1%;
+            opacity: 0.5;
+
+            &.active {
+                position: relative;
+                opacity: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: 7px 10px 6px rgba(0, 0, 0, 0.25);
+                transition: 0.3s;
+
+                &.active[data-tab="1"] {
+                    border-radius: 0 30px 30px 0;
+
+                    & p {
+                        padding-left: 131px;
+                    }
+                }
+
+                &.active[data-tab="2"] {
+                    border-radius: 30px 0 0 30px;
+
+                    & p {
+                        padding-left: 88px;
+                    }
+                }
+
+                &.active[data-tab="1"],
+                &.active[data-tab="2"] {
+                    & p {
+                        visibility: visible;
+                        transition: 0.3s;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .wrapper {
+
+
+        .tab {
+
+            // .tab__content
+
+            &__content {}
+
+            // .tab__pane
+
+            &__pane {
+                display: none;
+                padding: 30px;
+
+                &.active {
+                    display: flex;
+                }
+            }
+        }
+
+    }
+}
