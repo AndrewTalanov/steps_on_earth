@@ -106,7 +106,8 @@
 
                     .precambrian__container-item {
                         display: flex;
-                        gap: 105px;
+                        gap: 65px;
+                        justify-content: center;
 
 
                         .phase__discription {
@@ -115,7 +116,7 @@
                                     rgba(0, 255, 240, 0.5) 0%,
                                     rgba(255, 255, 255, 0) 100%);
 
-                            width: 39.7%;
+                            width: 440px;
                             height: max-content;
                             border-radius: 30px;
                             display: flex;
