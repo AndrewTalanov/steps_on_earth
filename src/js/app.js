@@ -29,10 +29,10 @@ tabsBtn.forEach(function (item) {
             currentBtn.classList.add('active');
             currentTab.classList.add('active');
             
-            anime({
-                targets: '.active',
-                width: 800,
-              });
+            // anime({
+            //     targets: '.active',
+            //     height: 215,
+            //   });
         }
     });
 });
