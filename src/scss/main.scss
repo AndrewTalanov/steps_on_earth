@@ -29,6 +29,7 @@
             align-items: center;
             flex-direction: column;
             font-size: 48px;
+            line-height: 57px;
             font-weight: 800;
             height: 108px;
             width: 48.1%;
@@ -65,7 +66,7 @@
                     border-radius: 30px 0 0 30px;
 
                     & p {
-                        padding-left: 88px;
+                        padding-right: 88px;
                     }
                 }
 
@@ -82,22 +83,97 @@
     }
 
     .wrapper {
-
-
         .tab {
 
             // .tab__content
 
-            &__content {}
+           
 
             // .tab__pane
 
             &__pane {
                 display: none;
-                padding: 30px;
+                margin-top: 135px;
 
                 &.active {
                     display: flex;
+                    flex-direction: column;
+                    gap: 100px;
+                }
+
+                &__precambrian-container {
+                    width: 100%;
+
+                    .precambrian__container-item {
+                        display: flex;
+                        gap: 75px;
+
+                        .phase__discription {
+                            background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+                                radial-gradient(49.88% 53.75% at 50% 0%,
+                                    rgba(0, 255, 240, 0.5) 0%,
+                                    rgba(255, 255, 255, 0) 100%);
+
+                            width: 32.5%;
+                            height: max-content;
+                            border-radius: 30px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                            gap: 40px;
+
+                            &-title {
+                                padding-top: 30px;
+
+                                & h2 {
+                                    font-size: 32px;
+                                }
+
+                                & p {
+                                    font-style: italic;
+                                    padding-top: 20px;
+                                    font-size: 20px;
+                                }
+                            }
+
+                            &-maturation {
+                                width: 48%;
+                                line-height: 24px;
+                                font-size: 20px;
+                                padding: 10px 0 32px 0;
+                            }
+
+                            &-phenomens {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                                gap: 25px;
+                                width: 65%;
+                                padding-bottom: 30px;
+                            }
+
+                        }
+
+                        .phase__image {
+                            .karhey-moon-img {
+                                position: absolute;
+                                width: 200px;
+                                top: 55%;
+                                right: 100%;
+                            }
+
+                            position: relative;
+                            top: 70px;
+
+                            & img {
+                                width: 585px;
+                            }
+                        }
+                    }
+
                 }
             }
         }
