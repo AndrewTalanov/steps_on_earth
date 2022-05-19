@@ -1,12 +1,15 @@
 // Заголовки, общие БЄМ блоки и проче...
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 ::-webkit-scrollbar {
-  width: 10px; /* ширина для вертикального скролла */
-  height: 1px; /* высота для горизонтального скролла */
+  width: 10px;
+  /* ширина для вертикального скролла */
+  height: 1px;
+  /* высота для горизонтального скролла */
   background-color: #143861;
 }
 
@@ -23,7 +26,8 @@ html, body {
 
 body {
   scroll-behavior: smooth;
-  background:  url("@img/back/stars.png"), 100% 0 / 100% url("@img/back/gradient.png") no-repeat,  0 0 / 100% 165px url("@img/back/header.png") no-repeat, #08102E;
+  background: url("@img/back/stars.png"), 100% 0 / 100% url("@img/back/gradient.png") no-repeat, 0 0 / 100% 165px url("@img/back/header.png") no-repeat, #08102E;
+  font-family: 'Rubik', sans-serif;
 }
 
 .wrapper {
@@ -34,7 +38,42 @@ body {
 ul {
   list-style-type: none;
 }
-ul, li {
+
+ul,
+li {
   margin: 0;
   padding: 0;
+}
+
+// Цвета\
+$white: #FFFFFF;
+$yellow: #FFFCC0;
+
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  color: $white;
+}
+
+h2,
+h3,
+h4 {
+  font-weight: 800;
+}
+
+h5,
+h6 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 400;
+}
+a{
+  text-decoration: none;
 }
