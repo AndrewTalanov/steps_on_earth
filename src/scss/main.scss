@@ -185,14 +185,12 @@
                         flex-wrap: wrap;
                         text-align: center;
 
-
                         .panel {
                             padding: 0 18px;
                             background-color: white;
-
                         }
 
-                        .group-wrapper {
+                        .group-warapper {
                             width: 100%;
                             display: flex;
                             justify-content: center;
@@ -234,9 +232,11 @@
                             transition: 1s;
                             border-radius: 30px;
                             position: relative;
+
                             @media (min-width: 1520px) {
                                 width: 210px;
                             }
+
                             &::before {
                                 z-index: -1;
                                 content: "";
@@ -250,7 +250,7 @@
                                 opacity: 0;
                             }
 
-                            &:hover::before { 
+                            &:hover::before {
                                 opacity: 1;
                             }
 
