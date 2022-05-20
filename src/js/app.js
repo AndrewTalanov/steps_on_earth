@@ -29,12 +29,12 @@ tb.add({
 tb.add({
     targets: '.tabs-animation__tab-2',
     width: '47%',
-}, '-=400')
+}, '-=400');
 // второй блок исчезает
 tb.add({
     targets: '.tabs-animation__tab-2',
     opacity: '0',
-}, '-=400')
+}, '-=400');
 // ..............
 
 let btnTabOne = document.querySelector('.tab-11');
@@ -321,18 +321,32 @@ document.querySelector(".search__icon").addEventListener("click", () => {
 
 });
 
-
-
-const toggleInfo = document.querySelector('.dropdown-info');
+// Открытие закрытие акардеонов, каждый отдельно открывается и закрывается
+const dropBtn = document.querySelectorAll('.dropdown-info');
 
 const showArrowContentAnimation = anime.timeline({
     easing: 'easeOutExpo',
     autoplay: false
 });
 
+
+var el1 = document.querySelector('#drop_1');
+var el2 = document.querySelector('#drop_2');
+// let el3 = document.querySelector('#drop_3');
+// let el4 = document.querySelector('#drop_4');
+// let el5 = document.querySelector('#drop_5');
+
 showArrowContentAnimation
     .add({
-        targets: '.periods-items',
+        targets: el1,
+        translateY: 40,
+        direction: 'alternate',
+        easing: 'easeInOutSine',
+        opacity: [0, 1],
+        duration: 500,
+    })
+    .add({
+        targets: el2,
         translateY: 40,
         direction: 'alternate',
         easing: 'easeInOutSine',
@@ -340,18 +354,31 @@ showArrowContentAnimation
         duration: 500,
     });
 
-toggleInfo.addEventListener("click", () => {
-    if (showArrowContentAnimation.began) {
-        showArrowContentAnimation.reverse();
-        if (
-            showArrowContentAnimation.progress === 0 &&
-            showArrowContentAnimation.direction === "reverse"
-        ) {
-            showArrowContentAnimation.completed = false;
-        }
-    }
+dropBtn.forEach(function (item) {
+    item.addEventListener("click", function () {
 
-    if (showArrowContentAnimation.paused) {
-        showArrowContentAnimation.play();
-    }
+        let currentBtn = item;
+
+        let dropId = currentBtn.getAttribute("data-drop");
+        let currentTab = document.querySelector(dropId);
+
+        currentBtn.classList.toggle('active');
+        currentTab.classList.toggle('active');
+
+        //Условия служит чтобы анимация не угасала резко а плавно работала в обратном направлении
+        if (showArrowContentAnimation.began) {
+            showArrowContentAnimation.reverse();
+            if (
+                showArrowContentAnimation.progress === 0 &&
+                showArrowContentAnimation.direction === "reverse"
+            ) {
+                showArrowContentAnimation.completed = false;
+            }
+        }
+
+        if (showArrowContentAnimation.paused) {
+            showArrowContentAnimation.play();
+        }
+
+    });
 });
