@@ -31,12 +31,12 @@ tb.add({
 tb.add({
     targets: '.tabs-animation__tab-2',
     width: '47%',
-}, '-=400')
+}, '-=400');
 // второй блок исчезает
 tb.add({
     targets: '.tabs-animation__tab-2',
     opacity: '0',
-}, '-=400')
+}, '-=400');
 // ..............
 
 let btnTabOne = document.querySelector('.tab-11');
@@ -52,7 +52,7 @@ if (btnTabOne != null) {
         // функционал
         tabContentOne.style.display = "flex";
         tabContentTwo.style.display = "none";
-    
+
         // анимация
         var tb = anime.timeline({
             easing: 'easeOutExpo',
@@ -105,8 +105,8 @@ if (btnTabTwo != null) {
         // функционал
         tabContentTwo.style.display = "flex";
         tabContentOne.style.display = "none";
-    
-    
+
+
         // анимация
         var tb = anime.timeline({
             easing: 'easeOutExpo',
@@ -160,39 +160,4 @@ if (btnTabTwo != null) {
     });
 }
 
-
-const toggleInfo = document.querySelector('.dropdown-info');
-
-const showArrowContentAnimation = anime.timeline({
-    easing: 'easeOutExpo',
-    autoplay: false
-});
-
-showArrowContentAnimation
-    .add({
-        targets: '.periods-items',
-        translateY: 40,
-        direction: 'alternate',
-        easing: 'easeInOutSine',
-        opacity: [0, 1],
-        duration: 500,
-    });
-
-if (toggleInfo != null) {
-    toggleInfo.addEventListener("click", () => {
-        if (showArrowContentAnimation.began) {
-            showArrowContentAnimation.reverse();
-            if (
-                showArrowContentAnimation.progress === 0 &&
-                showArrowContentAnimation.direction === "reverse"
-            ) {
-                showArrowContentAnimation.completed = false;
-            }
-        }
-    
-        if (showArrowContentAnimation.paused) {
-            showArrowContentAnimation.play();
-        }
-    });
-}
 
