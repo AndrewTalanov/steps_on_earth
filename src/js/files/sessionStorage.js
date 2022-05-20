@@ -15,7 +15,7 @@ let idNav = sessionStorage.getItem('key-nav');
 let contentDefinitions = document.querySelectorAll('.content-ids');
 
 if (idNav != null) {
-    contentDefinitions[idNav].style.display = 'block';    
+  contentDefinitions[idNav].style.display = 'block';    
 } else {
-    contentDefinitions[0].style.display = 'block';    
+  contentDefinitions[0].style.display = 'block';    
 }
