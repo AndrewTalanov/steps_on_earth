@@ -183,7 +183,7 @@ btnDrop.forEach((item, id) => {
 
         let showArrowContentAnimation = anime.timeline({
             easing: 'easeOutExpo',
-            duration: 300,
+            duration: 200,
         });
 
         if (contentDrop[id].style.opacity == 0) {
@@ -192,7 +192,7 @@ btnDrop.forEach((item, id) => {
                 .add({
                     targets: '.dropdown-info',
                     rotateX: 180,
-                    delay: 200,
+                    delay: 300,
                 })
                 .add({
                     targets: contentDrop[id],
@@ -246,28 +246,30 @@ btnDrop.forEach((item, id) => {
                     easing: 'easeInOutQuad',
                     translateY: -140,
                     opacity: [0, 1],
-                }, '-=300')
+                    direction: 'alternate',
+                }, )
 
                 .add({
                     targets: '.item-2',
                     easing: 'easeInOutQuad',
                     translateY: -130,
                     opacity: [0, 1],
-                }, '-=300')
+                    direction: 'alternate',
+                }, )
 
                 .add({
                     targets: '.item-3',
                     easing: 'easeInOutQuad',
                     translateY: -110,
                     opacity: [0, 1],
-                }, '-=350')
+                }, )
 
                 .add({
                     targets: '.item-4',
                     easing: 'easeInOutQuad',
                     translateY: -90,
                     opacity: [0, 1],
-                }, '-=350')
+                })
         }
 
     });
