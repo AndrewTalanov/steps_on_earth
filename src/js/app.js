@@ -156,68 +156,129 @@ if (btnTabTwo != null) {
             left: '0',
             opacity: '1',
             easing: 'easeInOutQuad'
-        })
+        });
     });
 }
 
 
-const toggleInfo = document.querySelector('.dropdown-info');
+// const dropBtn = document.querySelectorAll('.dropdown-info');
 
-const showArrowContentAnimation = anime.timeline({
-    easing: 'easeOutExpo',
-    autoplay: false
+// dropBtn.forEach(function (item) {
+//     item.addEventListener("click", function () {
+//         let currentBtn = item;
+
+//         let dropId = currentBtn.getAttribute("data-drop");
+//         let currentTab = document.querySelector(dropId);
+
+//         currentBtn.classList.toggle('active');
+//         currentTab.classList.toggle('active');
+//     });
+// });
+
+let btnDrop = document.querySelectorAll('.dropdown-info');
+let contentDrop = document.querySelectorAll('.periods-items');
+
+btnDrop.forEach((item, id) => {
+    item.addEventListener('click', () => {
+
+        let showArrowContentAnimation = anime.timeline({
+            easing: 'easeOutExpo',
+            duration: 300,
+        });
+
+        if (contentDrop[id].style.opacity == 0) {
+            showArrowContentAnimation
+
+                .add({
+                    targets: '.dropdown-info',
+                    rotateX: 180,
+                    delay: 200,
+                })
+                .add({
+                    targets: contentDrop[id],
+                    opacity: 1,
+                    easing: 'easeInOutQuad'
+                })
+
+                .add({
+                    targets: '.item-1',
+                    easing: 'easeInOutQuad',
+                    translateY: 0,
+                })
+                .add({
+                    targets: '.item-2',
+                    easing: 'easeInOutQuad',
+                    translateY: 0,
+                })
+
+                .add({
+                    targets: '.item-2',
+                    easing: 'easeInOutQuad',
+                    translateY: 0,
+                })
+                .add({
+                    targets: '.item-3',
+                    easing: 'easeInOutQuad',
+                    translateY: 0,
+                })
+                .add({
+                    targets: '.item-4',
+                    easing: 'easeInOutQuad',
+                    translateY: 0,
+                })
+
+
+        } else if (contentDrop[id].style.opacity == 1) {
+            showArrowContentAnimation
+                .add({
+                    targets: '.dropdown-info',
+                    rotateX: 0,
+                })
+                .add({
+                    targets: contentDrop[id],
+                    opacity: 0,
+                    easing: 'easeInOutQuad',
+                    delay: 200
+                })
+
+                .add({
+                    targets: '.item-1',
+                    easing: 'easeInOutQuad',
+                    translateY: -140,
+                    opacity: [0, 1],
+                }, '-=300')
+
+                .add({
+                    targets: '.item-2',
+                    easing: 'easeInOutQuad',
+                    translateY: -130,
+                    opacity: [0, 1],
+                }, '-=300')
+
+                .add({
+                    targets: '.item-3',
+                    easing: 'easeInOutQuad',
+                    translateY: -110,
+                    opacity: [0, 1],
+                }, '-=350')
+
+                .add({
+                    targets: '.item-4',
+                    easing: 'easeInOutQuad',
+                    translateY: -90,
+                    opacity: [0, 1],
+                }, '-=350')
+        }
+
+    });
 });
 
 
-var el1 = document.querySelector('#drop_1');
-var el2 = document.querySelector('#drop_2');
-// let el3 = document.querySelector('#drop_3');
-// let el4 = document.querySelector('#drop_4');
-// let el5 = document.querySelector('#drop_5');
+// document.querySelector(".dropdown-info").addEventListener("click", () => {
+//     var tl = anime.timeline({
+//         easing: 'easeOutExpo',
+//         duration: 500
+//     });
 
-showArrowContentAnimation
-    .add({
-        targets: el1,
-        translateY: 40,
-        direction: 'alternate',
-        easing: 'easeInOutSine',
-        opacity: [0, 1],
-        duration: 500,
-    })
-    .add({
-        targets: el2,
-        translateY: 40,
-        direction: 'alternate',
-        easing: 'easeInOutSine',
-        opacity: [0, 1],
-        duration: 500,
-    });
 
-dropBtn.forEach(function (item) {
-    item.addEventListener("click", function () {
-
-        let currentBtn = item;
-
-        let dropId = currentBtn.getAttribute("data-drop");
-        let currentTab = document.querySelector(dropId);
-
-        currentBtn.classList.toggle('active');
-        currentTab.classList.toggle('active');
-
-        //Условия служит чтобы анимация не угасала резко а плавно работала в обратном направлении
-        if (showArrowContentAnimation.began) {
-            showArrowContentAnimation.reverse();
-            if (
-                showArrowContentAnimation.progress === 0 &&
-                showArrowContentAnimation.direction === "reverse"
-            ) {
-                showArrowContentAnimation.completed = false;
-            }
-        }
-
-        if (showArrowContentAnimation.paused) {
-            showArrowContentAnimation.play();
-        }
-
-    });
-});
+// });
