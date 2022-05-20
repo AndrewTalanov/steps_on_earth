@@ -28,7 +28,6 @@
             display: flex;
             justify-content: space-between;
             &__item {
-                cursor: pointer;
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
@@ -46,6 +45,7 @@
                     left: 60px;
                 }
                 h2 {
+                    cursor: pointer;
                     font-size: 48px;
                     font-weight: 900;
                 }

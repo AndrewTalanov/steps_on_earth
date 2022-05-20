@@ -37,8 +37,8 @@ tb.add({
 }, '-=400')
 // ..............
 
-let btnTabOne = document.querySelector('.tab-1');
-let btnTabTwo = document.querySelector('.tab-2');
+let btnTabOne = document.querySelector('.tab-11');
+let btnTabTwo = document.querySelector('.tab-22');
 
 let tabContentOne = document.querySelector('#tab_1');
 let tabContentTwo = document.querySelector('#tab_2');
