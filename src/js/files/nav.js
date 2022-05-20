@@ -1,6 +1,5 @@
 import anime from 'animejs/lib/anime.es.js';
 
-
 // nav menu
 var i = 1;
 
@@ -17,7 +16,7 @@ document.querySelector(".search__icon").addEventListener("click", () => {
             targets: '.search__nav',
             width: '400px',
             opacity: '1',
-            easing: 'easeInOutQuad'
+            easing: 'easeOutElastic(1, .7)'
         });
         tl.
         add({
@@ -27,61 +26,15 @@ document.querySelector(".search__icon").addEventListener("click", () => {
         });
         tl.
         add({
-            targets: '.nav-li-1',
+            targets: '.search__nav ul li',
             opacity: 1,
-            left: 0,
-            easing: 'easeInOutQuad'
-        }, '-=200');
-        tl.
-        add({
-            targets: '.nav-li-2',
-            opacity: 1,
-            left: 0,
-            easing: 'easeInOutQuad'
-        }, '-=300');
-        tl.
-        add({
-            targets: '.nav-li-3',
-            opacity: 1,
-            left: 0,
-            easing: 'easeInOutQuad'
-        }, '-=300');
-        tl.
-        add({
-            targets: '.nav-li-4',
-            opacity: 1,
-            left: 0,
-            easing: 'easeInOutQuad'
-        }, '-=300');
-        tl.
-        add({
-            targets: '.nav-li-5',
-            opacity: 1,
-            left: 0,
-            easing: 'easeInOutQuad'
-        }, '-=300');
-        tl.
-        add({
-            targets: '.nav-li-6',
-            opacity: 1,
-            left: 0,
-            easing: 'easeInOutQuad'
-        }, '-=300');
-        tl.
-        add({
-            targets: '.nav-li-7',
-            opacity: 1,
-            left: 0,
-            easing: 'easeInOutQuad'
-        }, '-=300');
-        tl.
-        add({
-            targets: '.nav-li-8',
-            opacity: 1,
-            left: 0,
-            easing: 'easeInOutQuad'
-        }, '-=300');
-
+            left: [80, 0],
+            duration: 500,
+            delay: function(el, i, l) {
+                return i * 250;
+            },
+            easing: 'easeOutElastic(1, 1)'
+        });
         i++;
     } else {
 
@@ -89,63 +42,16 @@ document.querySelector(".search__icon").addEventListener("click", () => {
             easing: 'easeOutExpo',
             duration: 200
         });
-
         tl.
         add({
-            targets: '.nav-li-8',
+            targets: '.search__nav ul li',
             opacity: 0,
-            left: 80,
+            left: [0, 80],
+            delay: function(el, i, l) {
+                return (l - i) * 200;
+            },
             easing: 'easeInOutQuad'
-        }, '-=100');
-        tl.
-        add({
-            targets: '.nav-li-7',
-            opacity: 0,
-            left: 80,
-            easing: 'easeInOutQuad'
-        }, '-=100');
-        tl.
-        add({
-            targets: '.nav-li-6',
-            opacity: 0,
-            left: 80,
-            easing: 'easeInOutQuad'
-        }, '-=100');
-        tl.
-        add({
-            targets: '.nav-li-5',
-            opacity: 0,
-            left: 80,
-            easing: 'easeInOutQuad'
-        }, '-=100');
-        tl.
-        add({
-            targets: '.nav-li-4',
-            opacity: 0,
-            left: 80,
-            easing: 'easeInOutQuad'
-        }, '-=100');
-        tl.
-        add({
-            targets: '.nav-li-3',
-            opacity: 0,
-            left: 80,
-            easing: 'easeInOutQuad'
-        }, '-=100');
-        tl.
-        add({
-            targets: '.nav-li-2',
-            opacity: 0,
-            left: 80,
-            easing: 'easeInOutQuad'
-        }, '-=100');
-        tl.
-        add({
-            targets: '.nav-li-1',
-            opacity: 0,
-            left: 80,
-            easing: 'easeInOutQuad'
-        }, '-=100');
+        });
 
         tl.
         add({
@@ -161,7 +67,6 @@ document.querySelector(".search__icon").addEventListener("click", () => {
             opacity: '0',
             easing: 'easeInOutQuad'
         });
-
         i++;
     }
 
