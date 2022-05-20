@@ -7,22 +7,32 @@
 <body>
 	@@include('html/_header.htm',{})
 	<main>
+
 		<section class="section-earth">
 
 		</section>
+
 		<section class="section-tabs">
-			<div class="tabs__nav">
-				<a href="#" data-tab="#tab_1" class="tabs__nav-item active">
-					<h2 class="tab-1">Докембрий</h2>
-					<p class="period-description">Формирование геологии Земли</p>
-				</a>
 
-				<a href="#" data-tab="#tab_2" class="tabs__nav-item">
-					<h2>Фанерозой</h2>
-					<p class="period-description">Появление жизни на Земле</p>
-				</a>
+			<div class="tabs">
+
+				<div class="tabs-animation tabs-animation__tab-1"></div>
+				<div class="tabs-animation tabs-animation__tab-2"></div>
+
+				<div class="wrapper tabs-items">
+
+					<a href="#" data-tab="#tab_1" class="tabs-items__item">
+						<h2 class="tab-1">Докембрий</h2>
+						<p class="tab-description tab-1__description">Формирование геологии Земли</p>
+					</a>
+
+					<a href="#" data-tab="#tab_2" class="tabs-items__item">
+						<h2 class="tab-2">Фанерозой</h2>
+						<p class="tab-description tab-2__description">Появление жизни на Земле</p>
+					</a>
+
+				</div>
 			</div>
-
 
 			<div class="tab__content wrapper">
 
