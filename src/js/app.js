@@ -28,7 +28,7 @@ tabsBtn.forEach(function (item) {
 
             currentBtn.classList.add('active');
             currentTab.classList.add('active');
-            
+
             // anime({
             //     targets: '.active',
             //     height: 215,
@@ -48,6 +48,7 @@ document.querySelector(".search__icon").addEventListener("click", () => {
             easing: 'easeOutExpo',
             duration: 500
         });
+
         tl.
         add({
             targets: '.search__nav',
@@ -117,7 +118,6 @@ document.querySelector(".search__icon").addEventListener("click", () => {
             left: 0,
             easing: 'easeInOutQuad'
         }, '-=300');
-
 
         i++;
     } else {
@@ -198,12 +198,43 @@ document.querySelector(".search__icon").addEventListener("click", () => {
             opacity: '0',
             easing: 'easeInOutQuad'
         });
-        
 
         i++;
     }
 
-    
-    
-    
+});
+
+
+
+const toggleInfo = document.querySelector('.dropdown-info');
+
+const showArrowContentAnimation = anime.timeline({
+    easing: 'easeOutExpo',
+    autoplay: false
+});
+
+showArrowContentAnimation
+    .add({
+        targets: '.periods-items',
+        translateY: 40,
+        direction: 'alternate',
+        easing: 'easeInOutSine',
+        opacity: [0, 1],
+        duration: 500,
+    });
+
+toggleInfo.addEventListener("click", () => {
+    if (showArrowContentAnimation.began) {
+        showArrowContentAnimation.reverse();
+        if (
+            showArrowContentAnimation.progress === 0 &&
+            showArrowContentAnimation.direction === "reverse"
+        ) {
+            showArrowContentAnimation.completed = false;
+        }
+    }
+
+    if (showArrowContentAnimation.paused) {
+        showArrowContentAnimation.play();
+    }
 });
