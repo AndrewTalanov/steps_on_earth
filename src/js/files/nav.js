@@ -27,8 +27,8 @@ document.querySelector(".search__icon").addEventListener("click", () => {
         tl.
         add({
             targets: '.search__nav ul li',
-            opacity: 1,
-            left: [80, 0],
+            opacity: [0, 1],
+            translateX: [80, 0],
             duration: 500,
             delay: function(el, i, l) {
                 return i * 250;
@@ -45,8 +45,8 @@ document.querySelector(".search__icon").addEventListener("click", () => {
         tl.
         add({
             targets: '.search__nav ul li',
-            opacity: 0,
-            left: [0, 80],
+            opacity: [1, 0],
+            translateX: [0, 80],
             delay: function(el, i, l) {
                 return (l - i) * 200;
             },
