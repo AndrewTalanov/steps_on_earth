@@ -70,6 +70,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"@barba/core": "^2.9.7",
 		"animejs": "^3.2.1",
 		"simplebar": "latest"
 	}

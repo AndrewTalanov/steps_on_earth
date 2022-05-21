@@ -1,6 +1,7 @@
 .definitions {
   scroll-behavior: smooth;
-  background: 100% 0 / cover  url("@img/back/gradient-definitions.png") no-repeat, 0 0 / auto url("@img/back/stars.png") no-repeat, #08102E;
+  background: 100% 0 / cover  url("@img/back/gradient-definitions.png") no-repeat, 0 0 / 100% auto url("@img/back/stars.png") no-repeat, #08102E;
+  font-family: 'Rubik', sans-serif;
 
   &-main {
     .content-inner {
