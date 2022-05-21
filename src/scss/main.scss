@@ -1,289 +1,294 @@
-.section-tabs {
-    margin-top: 220px;
+.main-page-main {
+    background: url("@img/back/stars.png"), 100% 0 / 100% url("@img/back/gradient.png") no-repeat, 0 0 / 100% 165px url("@img/back/header.png") no-repeat, #08102E;
+    .section-tabs {
+        margin-top: 220px;
 
-    .tabs {
-        height: 200px;
-        display: flex;
-        align-items: center;
-        position: relative;
-
-        &-animation {
-            z-index: -1;
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 7px 10px 6px rgba(0, 0, 0, 0.25);
-            width: 47%;
-            height: 220px;
-
-            &__tab-1 {
-                border-radius: 0 30px 30px 0;
-                top: 0;
-                left: 0;
-            }
-
-            &__tab-2 {
-                border-radius: 30px 0 0 30px;
-                top: 0;
-                right: 0;
-                width: 44%;
-            }
-        }
-
-        &-items {
+        .tabs {
+            height: 200px;
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            position: relative;
 
-            &__item {
+            &-animation {
+                z-index: 0;
+                position: absolute;
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: 7px 10px 6px rgba(0, 0, 0, 0.25);
+                width: 47%;
+                height: 220px;
+
+                &__tab-1 {
+                    border-radius: 0 30px 30px 0;
+                    top: 0;
+                    left: 0;
+                }
+
+                &__tab-2 {
+                    border-radius: 30px 0 0 30px;
+                    top: 0;
+                    right: 0;
+                    width: 44%;
+                }
+            }
+
+            &-items {
+                z-index: 1;
                 display: flex;
-                flex-direction: column;
-                gap: 30px;
+                justify-content: space-between;
 
-                .tab-1 {
-                    position: relative;
-                    left: 15%;
-                }
+                &__item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
 
-                .tab-1__description {
-                    position: relative;
-                    right: 20%;
-                }
+                    .tab-1 {
+                        position: relative;
+                        left: 15%;
+                    }
 
-                .tab-2__description {
-                    position: relative;
-                    left: 60px;
-                }
+                    .tab-1__description {
+                        position: relative;
+                        right: 20%;
+                    }
 
-                h2 {
-                    cursor: pointer;
-                    font-size: 48px;
-                    font-weight: 900;
-                }
+                    .tab-2__description {
+                        position: relative;
+                        left: 60px;
+                    }
 
-                p {
-                    font-size: 28px;
-                    font-style: italic;
-                    font-weight: 400;
+                    h2 {
+                        cursor: pointer;
+                        font-size: 48px;
+                        font-weight: 900;
+                    }
+
+                    p {
+                        font-size: 28px;
+                        font-style: italic;
+                        font-weight: 400;
+                    }
                 }
             }
         }
-    }
 
-    .tab__content {
-        .tab {
+        .tab__content {
+            .tab {
 
-            // .tab__pane
-            &__pane {
-                // display: none;
-                margin-top: 135px;
-                display: flex;
-                flex-direction: column;
-                gap: 220px;
+                // .tab__pane
+                &__pane {
+                    // display: none;
+                    margin-top: 135px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 220px;
 
-                // &.active {
-                //     display: flex;
-                //     flex-direction: column;
-                //     gap: 220px;
-                // }
+                    // &.active {
+                    //     display: flex;
+                    //     flex-direction: column;
+                    //     gap: 220px;
+                    // }
 
-                &__precambrian-container {
-                    width: 100%;
+                    &__precambrian-container {
+                        width: 100%;
 
-                    .precambrian__container-item {
-                        display: flex;
-                        gap: 65px;
-                        justify-content: center;
-                        justify-content: space-between;
-
-
-                        .phase__discription {
-                            background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
-                                radial-gradient(49.88% 53.75% at 50% 0%,
-                                    rgba(0, 255, 240, 0.5) 0%,
-                                    rgba(255, 255, 255, 0) 100%);
-
-                            width: 440px;
-                            height: max-content;
-                            border-radius: 30px;
+                        .precambrian__container-item {
                             display: flex;
-                            flex-direction: column;
-                            align-items: center;
+                            gap: 65px;
                             justify-content: center;
-                            text-align: center;
-                            gap: 40px;
+                            justify-content: space-between;
 
-                            &-title {
-                                padding-top: 30px;
 
-                                & h2 {
-                                    font-size: 32px;
-                                }
+                            .phase__discription {
+                                background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+                                    radial-gradient(49.88% 53.75% at 50% 0%,
+                                        rgba(0, 255, 240, 0.5) 0%,
+                                        rgba(255, 255, 255, 0) 100%);
 
-                                & p {
-                                    font-style: italic;
-                                    padding-top: 20px;
-                                    font-size: 20px;
-                                }
-                            }
-
-                            &-maturation {
-                                width: 48%;
-                                line-height: 24px;
-                                font-size: 20px;
-                                padding: 10px 0 32px 0;
-                            }
-
-                            &-phenomens {
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                flex-wrap: wrap;
-                                gap: 25px;
-                                width: 65%;
-                                padding-bottom: 30px;
-                            }
-
-                        }
-
-                        .phase__image {
-                            .karhey-moon-img {
-                                position: absolute;
-                                top: 65%;
-                                right: 100%;
-                            }
-
-                            position: relative;
-                            top: 70px;
-                        }
-                    }
-
-                }
-
-                .periods {
-                    width: 85%;
-                    margin: 0 auto;
-
-                    &__title {
-                        display: flex;
-                        align-items: center;
-                        gap: 30px;
-                        margin-bottom: 75px;
-
-                        p {
-                            font-size: 24px;
-                        }
-
-                        .dropdown-info {
-                            cursor: pointer;
-                        }
-                    }
-
-                    &-items {
-                        opacity: 1;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        flex-wrap: wrap;
-                        text-align: center;
-
-                        .panel {
-                            padding: 0 18px;
-                            background-color: white;
-                        }
-
-                        .group-wrapper {
-                            width: 100%;
-                            display: flex;
-                            justify-content: center;
-                            margin-bottom: 50px;
-
-                            &__title {
-                                text-align: center;
-                                width: 354px;
-                                height: 85px;
+                                width: 440px;
+                                height: max-content;
                                 border-radius: 30px;
                                 display: flex;
-                                justify-content: center;
-                                align-items: center;
                                 flex-direction: column;
-                                gap: 15px;
+                                align-items: center;
+                                justify-content: center;
+                                text-align: center;
+                                gap: 40px;
 
+                                &-title {
+                                    padding-top: 30px;
 
-                                h3 {
-                                    font-weight: 600;
-                                    font-size: 18px;
+                                    & h2 {
+                                        font-size: 32px;
+                                    }
+
+                                    & p {
+                                        font-style: italic;
+                                        padding-top: 20px;
+                                        font-size: 20px;
+                                    }
                                 }
 
-                                p {
-                                    font-weight: 400;
-                                    font-size: 12px;
-                                    font-style: italic;
+                                &-maturation {
+                                    width: 48%;
+                                    line-height: 24px;
+                                    font-size: 20px;
+                                    padding: 10px 0 32px 0;
                                 }
+
+                                &-phenomens {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    flex-wrap: wrap;
+                                    gap: 25px;
+                                    width: 65%;
+                                    padding-bottom: 30px;
+                                }
+
+                            }
+
+                            .phase__image {
+                                .karhey-moon-img {
+                                    position: absolute;
+                                    top: 65%;
+                                    right: 100%;
+                                }
+
+                                position: relative;
+                                top: 70px;
                             }
                         }
 
-                        .item {
-                            cursor: pointer;
-                            margin: 50px 0;
+                    }
+
+                    .periods {
+                        width: 85%;
+                        margin: 0 auto;
+
+                        &__title {
                             display: flex;
-                            flex-direction: column;
                             align-items: center;
-                            width: 190px;
-                            padding: 40px 0;
-                            transition: 1s;
-                            border-radius: 30px;
-                            position: relative;
+                            gap: 30px;
+                            margin-bottom: 75px;
 
-                            @media (min-width: 1520px) {
-                                width: 210px;
+                            p {
+                                font-size: 24px;
                             }
 
-                            &::before {
-                                z-index: -1;
-                                content: "";
-                                position: absolute;
-                                top: 0;
-                                left: 0px;
+                            .dropdown-info {
+                                cursor: pointer;
+                            }
+                        }
+
+                        &-items {
+                            opacity: 1;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            text-align: center;
+
+                            .panel {
+                                padding: 0 18px;
+                                background-color: white;
+                            }
+
+                            .group-wrapper {
                                 width: 100%;
-                                height: 100%;
-                                background: 0 0 / 100% 100% url("@img/back/planet-back.png") no-repeat;
-                                transition: .5s;
-                                opacity: 0;
-                            }
+                                display: flex;
+                                justify-content: center;
+                                margin-bottom: 50px;
 
-                            &:hover::before {
-                                opacity: 1;
-                            }
+                                &__title {
+                                    text-align: center;
+                                    width: 354px;
+                                    height: 85px;
+                                    border-radius: 30px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    flex-direction: column;
+                                    gap: 15px;
 
-                            img {
-                                width: 120px;
-                                margin-bottom: 35px;
-                            }
 
-                            &__title {
-                                margin-bottom: 11px;
+                                    h3 {
+                                        font-weight: 600;
+                                        font-size: 18px;
+                                    }
 
-                                h3 {
-                                    font-size: 16px;
-                                    font-weight: 600;
+                                    p {
+                                        font-weight: 400;
+                                        font-size: 12px;
+                                        font-style: italic;
+                                    }
                                 }
                             }
 
-                            &__description {
-                                p {
-                                    font-size: 12px;
-                                    font-style: italic;
+                            .item {
+                                cursor: pointer;
+                                margin: 50px 0;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                width: 190px;
+                                padding: 40px 0;
+                                transition: 1s;
+                                border-radius: 30px;
+                                position: relative;
+
+                                @media (min-width: 1520px) {
+                                    width: 210px;
+                                }
+
+                                &::before {
+                                    z-index: -1;
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0px;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: 0 0 / 100% 100% url("@img/back/planet-back.png") no-repeat;
+                                    transition: .5s;
+                                    opacity: 0;
+                                }
+
+                                &:hover::before {
+                                    opacity: 1;
+                                }
+
+                                img {
+                                    width: 120px;
+                                    margin-bottom: 35px;
+                                }
+
+                                &__title {
+                                    margin-bottom: 11px;
+
+                                    h3 {
+                                        font-size: 16px;
+                                        font-weight: 600;
+                                    }
+                                }
+
+                                &__description {
+                                    p {
+                                        font-size: 12px;
+                                        font-style: italic;
+                                    }
                                 }
                             }
                         }
                     }
                 }
+
+            }
+
+            #tab_2 {
+                display: none;
             }
 
         }
-
-        #tab_2 {
-            display: none;
-        }
-
     }
+
 }

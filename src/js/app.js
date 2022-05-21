@@ -28,50 +28,51 @@ barba.init({
       pageAnimIn();
       await delay(1000);
       done();
-    
     },
-    beforeEnter(data) {
-      addEventOnLinkNavMenu();
-      navMenuOpenClose();
-      choiseDisplayDefinitions();
-      animationOpenSiteTabs();
-      toggleTabs();
+    async beforeEnter(data) {
+      // await addEventOnLinkNavMenu();
+      await navMenuOpenClose();
+      // await choiseDisplayDefinitions();
+      await animationOpenSiteTabs();
+      await toggleTabs();
+
+      // data.next.container.querySelector('.search__icon').addEventListener("click", () => {
+
+      // });
+
     },
     async enter(data) {
       await pageAnimOut();
+      // console.log(data.next.namespace);
     },
   }]
 });
 // ..........
 
-// открытие нав меню на всех страницах
+
+barba.hooks.enter((data) => {
+
+  data.next.container.querySelector('.search__icon').addEventListener("click", () => {
+
+    sessionStorage.clear();
+    addEventOnLinkNavMenu();
+    // choiseDisplayDefinitions();
+
+    sessionStorage.setItem('toggle-nav', 1);
+
+    functionalLinksNavMenu();
+  })
+
+  choiseDisplayDefinitions();
+
+});
+
 addEventOnLinkNavMenu();
 navMenuOpenClose();
 choiseDisplayDefinitions();
 
 animationOpenSiteTabs();
 toggleTabs();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -96,6 +97,9 @@ function choiseDisplayDefinitions() {
 
   if (idNav != null) {
     if (contentDefinitions[idNav] != undefined || contentDefinitions[0] != null) {
+      if (idNav > 8) {
+        idNav = 9 % idNav;
+      }
       contentDefinitions[idNav].style.display = 'block';
     }
   } else {
@@ -105,84 +109,88 @@ function choiseDisplayDefinitions() {
   }
 }
 
+
+
+
 function navMenuOpenClose() {
   // nav menu
-  var i = 1;
+  sessionStorage.setItem('toggle-nav', 1);
 
-  let btn = document.querySelector(".search__icon");
+  let btn = document.querySelector('.search__icon');
 
   btn.addEventListener("click", () => {
-    console.timeLog(btn);
-    console.log(i);
-    if (i % 2 == 1) {
-      var tl = anime.timeline({
-        easing: 'easeOutExpo',
-        duration: 500
-      });
-
-      tl.
-        add({
-          targets: '.search__nav',
-          width: '400px',
-          opacity: '1',
-          easing: 'easeOutElastic(1, .7)'
-        });
-      tl.
-        add({
-          targets: '.search__nav',
-          height: '610px',
-          easing: 'easeInOutQuad'
-        });
-      tl.
-        add({
-          targets: '.search__nav ul li',
-          opacity: [0, 1],
-          translateX: [80, 0],
-          duration: 500,
-          delay: function (el, i, l) {
-            return i * 250;
-          },
-          easing: 'easeOutElastic(1, 1)'
-        });
-      i++;
-    } else {
-
-      var tl = anime.timeline({
-        easing: 'easeOutExpo',
-        duration: 200
-      });
-      tl.
-        add({
-          targets: '.search__nav ul li',
-          opacity: [1, 0],
-          translateX: [0, 80],
-          delay: function (el, i, l) {
-            return (l - i) * 200;
-          },
-          easing: 'easeInOutQuad'
-        });
-
-      tl.
-        add({
-          targets: '.search__nav',
-          height: '0px',
-          opacity: '1',
-          easing: 'easeInOutQuad'
-        });
-      tl.
-        add({
-          targets: '.search__nav',
-          width: '0px',
-          opacity: '0',
-          easing: 'easeInOutQuad'
-        });
-      i++;
-    }
-
+    functionalLinksNavMenu();
   });
 
 }
 
+
+function functionalLinksNavMenu() {
+  if (sessionStorage.getItem('toggle-nav') == 1) {
+    var tl = anime.timeline({
+      easing: 'easeOutExpo',
+      duration: 500
+    });
+
+    tl.
+      add({
+        targets: '.search__nav',
+        width: '400px',
+        opacity: '1',
+        easing: 'easeOutElastic(1, .7)'
+      });
+    tl.
+      add({
+        targets: '.search__nav',
+        height: '610px',
+        easing: 'easeInOutQuad'
+      });
+    tl.
+      add({
+        targets: '.search__nav ul li',
+        opacity: [0, 1],
+        translateX: [80, 0],
+        duration: 500,
+        delay: function (el, i, l) {
+          return i * 250;
+        },
+        easing: 'easeOutElastic(1, 1)'
+      });
+    sessionStorage.setItem('toggle-nav', 2);
+  } else if (sessionStorage.getItem('toggle-nav') == 2) {
+
+    var tl = anime.timeline({
+      easing: 'easeOutExpo',
+      duration: 200
+    });
+    tl.
+      add({
+        targets: '.search__nav ul li',
+        opacity: [1, 0],
+        translateX: [0, 80],
+        delay: function (el, i, l) {
+          return (l - i) * 200;
+        },
+        easing: 'easeInOutQuad'
+      });
+
+    tl.
+      add({
+        targets: '.search__nav',
+        height: '0px',
+        opacity: '1',
+        easing: 'easeInOutQuad'
+      });
+    tl.
+      add({
+        targets: '.search__nav',
+        width: '0px',
+        opacity: '0',
+        easing: 'easeInOutQuad'
+      });
+    sessionStorage.setItem('toggle-nav', 1);
+  }
+}
 
 
 
