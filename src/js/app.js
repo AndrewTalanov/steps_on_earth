@@ -1,14 +1,25 @@
+// Подключение стилей
 import "../scss/style.scss";
 
+
+/* БИБЛИОТЕКИ */
+
+// анимации
 import anime from 'animejs/lib/anime.es.js';
+// переход между страницами
 import barba from '@barba/core';
 
-import * as flsFunctions from "./files/functions.js";
-import "./files/periods.js";
 
+/* import ФУНКЦИОНАЛА */
+
+// Проверка браузера на поддержку WEBP 
+import * as flsFunctions from "./files/functions.js";
 flsFunctions.isWebp();
 
-// ЯДРО 
+// блок с периодами
+import "./files/periods.js";
+
+/* ЯДРО */
 function delay(n) {
   n = n || 2000;
   return new Promise((done) => {
@@ -23,6 +34,14 @@ barba.init({
   transitions: [{
     sync: true,
     name: 'base',
+    async once(data) {
+      addEventOnLinkNavMenu();
+      navMenuOpenClose();
+      choiseDisplayDefinitions();
+
+      animationOpenSiteTabs();
+      toggleTabs();
+    },
     async leave(data) {
       const done = this.async();
       pageAnimIn();
@@ -30,58 +49,23 @@ barba.init({
       done();
     },
     async beforeEnter(data) {
-      // await addEventOnLinkNavMenu();
       await navMenuOpenClose();
-      // await choiseDisplayDefinitions();
       await animationOpenSiteTabs();
       await toggleTabs();
-
-      // data.next.container.querySelector('.search__icon').addEventListener("click", () => {
-
-      // });
-
     },
     async enter(data) {
-      await pageAnimOut();
-      // console.log(data.next.namespace);
+      data.next.container.querySelector('.search__icon').addEventListener("click", () => {
+        addEventOnLinkNavMenu();
+        animationToggleNavMenu();
+      })
+      choiseDisplayDefinitions();
     },
   }]
 });
 // ..........
 
-
-barba.hooks.enter((data) => {
-
-  data.next.container.querySelector('.search__icon').addEventListener("click", () => {
-    console.log('ok56');
-    // sessionStorage.clear();
-
-    addEventOnLinkNavMenu();
-    // choiseDisplayDefinitions();
-
-    functionalLinksNavMenu();
-    
-    // sessionStorage.setItem('toggle-nav', 2);
-  })
-
-  choiseDisplayDefinitions();
-
-});
-
-addEventOnLinkNavMenu();
-navMenuOpenClose();
-choiseDisplayDefinitions();
-
-animationOpenSiteTabs();
-toggleTabs();
-
-
-
-
-
-
-// НАЗВАНИЕ ФУНКЦИЙ ПОМОЙКА, РАСКИДАН КОД ТОЖЕ КАК ПОМОЙКА
-// хранение данных в СЕССИОН стораге
+// 1. Получаем все элементы навигационного меню со страницы и навешиваем на них обработчик событий
+// 2. Записываем в sessionStorage id нажатой ссылки из nav menu
 function addEventOnLinkNavMenu() {
   let links = document.querySelectorAll('.search__nav ul li a');
 
@@ -92,7 +76,8 @@ function addEventOnLinkNavMenu() {
   });
 }
 
-// функционал
+// 1. Определение какой блок "определений" показать
+// 2. Display block для подходящего блока
 function choiseDisplayDefinitions() {
   let contentDefinitions = document.querySelectorAll('.content-ids');
   // получение, номера контента что отображать на странице определений
@@ -112,9 +97,8 @@ function choiseDisplayDefinitions() {
   }
 }
 
-
-
-
+// 1. По умолчанию записываем в sessionStorage флаг 1
+// 2. Получаем кнопку взаимодействия с нав меню со страницы, навешиваем обработчик событий, запускаем анимацию.
 function navMenuOpenClose() {
   // nav menu
   sessionStorage.setItem('toggle-nav', 1);
@@ -122,14 +106,14 @@ function navMenuOpenClose() {
   let btn = document.querySelector('.search__icon');
 
   btn.addEventListener("click", () => {
-    console.log('ok121');
-    functionalLinksNavMenu();
+    animationToggleNavMenu();
   });
 
 }
 
-
-function functionalLinksNavMenu() {
+// 1. Анимация открытия/закрытия навигационного меню
+// 2. Изменение значения флага
+function animationToggleNavMenu() {
   if (sessionStorage.getItem('toggle-nav') == 1) {
     var tl = anime.timeline({
       easing: 'easeOutExpo',
@@ -196,11 +180,7 @@ function functionalLinksNavMenu() {
   }
 }
 
-
-
-
-// Анимации для переключения страницы
-
+// 1. Анимации переключения страницы
 function pageAnimIn() {
   var tt = anime.timeline({
     easing: 'easeOutExpo',
@@ -223,18 +203,7 @@ function pageAnimIn() {
     });
 }
 
-function pageAnimOut() {
-  // tt.
-  //   add({
-  //     targets: '.page-transition',
-  //     delay: 300,
-  //     scaleX: [500, 0],
-  //     scaleY: [500, 0],
-  //     easing: 'easeInOutQuad'
-  //   });
-}
-// ........
-
+// 1. Анимация переключения табов (на главной) (срабатывает только при открытии сайта)
 function animationOpenSiteTabs() {
   var tb = anime.timeline({
     easing: 'easeOutExpo',
@@ -263,13 +232,19 @@ function animationOpenSiteTabs() {
   // ..............
 }
 
+// 1. Функционал переключения табов (на главной)
 function toggleTabs() {
   let btnTabOne = document.querySelector('.tab-11');
   let btnTabTwo = document.querySelector('.tab-22');
 
   let tabContentOne = document.querySelector('#tab_1');
   let tabContentTwo = document.querySelector('#tab_2');
+
+
   if (btnTabOne != null) {
+
+    // btnTabOne.removeEventListener('click');
+
     btnTabOne.addEventListener("click", () => {
 
       // функционал
@@ -277,44 +252,50 @@ function toggleTabs() {
       tabContentTwo.style.display = "none";
 
       // анимация
-      var tb = anime.timeline({
+      var tb1 = anime.timeline({
         easing: 'easeOutExpo',
         duration: 300
       });
+      // анимация
+      var tb2 = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 300
+      });
+
       // первый блок появляется
-      tb.add({
+      tb1.add({
         targets: '.tabs-animation__tab-1',
         opacity: '1',
         easing: 'easeInOutQuad'
       })
       // описание эры уходит
-      tb.add({
+      tb2.add({
         targets: '.tab-2__description',
         opacity: '0',
         easing: 'easeInOutQuad'
       })
       // высота второго блока уменьшается
-      tb.add({
+      tb2.add({
         targets: '.tabs-animation__tab-2',
         height: '135px',
         width: '44%',
         easing: 'easeInOutQuad'
       })
       // ширина первого блока увеличивается
-      tb.add({
+      tb1.add({
         targets: '.tabs-animation__tab-1',
         width: '47%',
         height: '220px',
         easing: 'easeInOutQuad'
       })
       // второй блок исчезает
-      tb.add({
+      tb2.add({
         targets: '.tabs-animation__tab-2',
         opacity: '0',
         easing: 'easeInOutQuad'
       })
       // описание первого блока появляется
-      tb.add({
+      tb1.add({
         targets: '.tab-1__description',
         opacity: '1',
         easing: 'easeInOutQuad'
@@ -323,58 +304,63 @@ function toggleTabs() {
   }
 
   if (btnTabTwo != null) {
-    btnTabTwo.addEventListener("click", () => {
 
+    btnTabTwo.addEventListener("click", () => {
       // функционал
       tabContentTwo.style.display = "flex";
       tabContentOne.style.display = "none";
 
-
       // анимация
-      var tb = anime.timeline({
+      var tb1 = anime.timeline({
         easing: 'easeOutExpo',
         duration: 300
       });
+      // анимация
+      var tb2 = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 300
+      });
+
       // костыль
-      tb.add({
+      tb2.add({
         targets: '.tabs-animation__tab-2',
         width: '44%',
         easing: 'easeInOutQuad'
       }, '-=300')
       // второй блок появляется
-      tb.add({
+      tb2.add({
         targets: '.tabs-animation__tab-2',
         opacity: '1',
         easing: 'easeInOutQuad'
       })
       // описание первого блока уходит
-      tb.add({
+      tb1.add({
         targets: '.tab-1__description',
         opacity: '0',
         easing: 'easeInOutQuad'
       })
       // ширина первого блока уменьшается
-      tb.add({
+      tb1.add({
         targets: '.tabs-animation__tab-1',
         width: '44%',
         height: '135px',
         easing: 'easeInOutQuad'
       })
       // ширина второго блока увеличивается
-      tb.add({
+      tb2.add({
         targets: '.tabs-animation__tab-2',
         width: '47%',
         height: '220px',
         easing: 'easeInOutQuad'
       })
       // первый блок исчезает
-      tb.add({
+      tb1.add({
         targets: '.tabs-animation__tab-1',
         opacity: '0',
         easing: 'easeInOutQuad'
       })
       // описание второго блока появляется
-      tb.add({
+      tb2.add({
         targets: '.tab-2__description',
         left: '0',
         opacity: '1',
