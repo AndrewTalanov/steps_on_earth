@@ -53,14 +53,15 @@ barba.init({
 barba.hooks.enter((data) => {
 
   data.next.container.querySelector('.search__icon').addEventListener("click", () => {
+    console.log('ok56');
+    // sessionStorage.clear();
 
-    sessionStorage.clear();
     addEventOnLinkNavMenu();
     // choiseDisplayDefinitions();
 
-    sessionStorage.setItem('toggle-nav', 1);
-
     functionalLinksNavMenu();
+    
+    // sessionStorage.setItem('toggle-nav', 2);
   })
 
   choiseDisplayDefinitions();
@@ -73,6 +74,8 @@ choiseDisplayDefinitions();
 
 animationOpenSiteTabs();
 toggleTabs();
+
+
 
 
 
@@ -119,6 +122,7 @@ function navMenuOpenClose() {
   let btn = document.querySelector('.search__icon');
 
   btn.addEventListener("click", () => {
+    console.log('ok121');
     functionalLinksNavMenu();
   });
 
