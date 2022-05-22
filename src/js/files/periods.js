@@ -6,6 +6,9 @@ let contentDrop = document.querySelectorAll('.periods-items');
 btnDrop.forEach((item, id) => {
     item.addEventListener('click', () => {
 
+
+        console.log('ok');
+
         let showArrowContentAnimation = anime.timeline({
             easing: 'easeOutExpo',
             duration: 500,
