@@ -371,42 +371,6 @@ function toggleTabs() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let btnDrop = document.querySelectorAll('.dropdown-info');
 let contentDrop = document.querySelectorAll('.periods-items');
 
@@ -505,18 +469,3 @@ btnDrop.forEach((item, id) => {
     }
   });
 });
-
-
-// const dropBtn = document.querySelectorAll('.dropdown-info');
-
-// dropBtn.forEach(function (item) {
-//     item.addEventListener("click", function () {
-//         let currentBtn = item;
-
-//         let dropId = currentBtn.getAttribute("data-drop");
-//         let currentTab = document.querySelector(dropId);
-
-//         currentBtn.classList.toggle('active');
-//         currentTab.classList.toggle('active');
-//     });
-// });
