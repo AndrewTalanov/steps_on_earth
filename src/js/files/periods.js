@@ -7,14 +7,16 @@ btnDrop.forEach((item, id) => {
     item.addEventListener('click', () => {
 
 
-        console.log('ok');
-
+        // таймлайн
         let showArrowContentAnimation = anime.timeline({
             easing: 'easeOutExpo',
             duration: 500,
         });
 
         const interval = 400;
+
+        // console.log(contentDrop[id].style.opacity);
+        console.log(contentDrop[id].style.opacity);
 
         if (contentDrop[id].style.opacity == 0) {
             showArrowContentAnimation
@@ -37,6 +39,7 @@ btnDrop.forEach((item, id) => {
                 });
 
         } else if (contentDrop[id].style.opacity == 1) {
+            // console.log(contentDrop[id].style.opacity);
             showArrowContentAnimation
 
                 .add({
