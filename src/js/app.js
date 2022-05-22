@@ -25,8 +25,8 @@ function delay(n) {
   return new Promise((done) => {
     setTimeout(() => {
       done();
-    }, n)
-  })
+    }, n);
+  });
 }
 
 barba.init({
@@ -72,7 +72,7 @@ function addEventOnLinkNavMenu() {
   links.forEach((item, id) => {
     item.addEventListener("click", () => {
       sessionStorage.setItem('key-nav', id);
-    })
+    });
   });
 }
 
@@ -147,7 +147,7 @@ function animationToggleNavMenu() {
     sessionStorage.setItem('toggle-nav', 2);
   } else if (sessionStorage.getItem('toggle-nav') == 2) {
 
-    var tl = anime.timeline({
+    let tl = anime.timeline({
       easing: 'easeOutExpo',
       duration: 200
     });
@@ -211,24 +211,24 @@ function animationOpenSiteTabs() {
   });
   // описание эры уходит
   tb.add({
-    targets: '.tab-2__description',
-    opacity: '0',
-  }, '-=400')
-  // высота второго блока уменьшается
-  tb.add({
-    targets: '.tabs-animation__tab-2',
-    height: '135px',
-  }, '-=400')
-  // ширина второго блока уменьшается
-  tb.add({
-    targets: '.tabs-animation__tab-2',
-    width: '47%',
-  }, '-=400');
-  // второй блок исчезает
-  tb.add({
-    targets: '.tabs-animation__tab-2',
-    opacity: '0',
-  }, '-=400');
+      targets: '.tab-2__description',
+      opacity: '0',
+    }, '-=400'),
+    // высота второго блока уменьшается
+    tb.add({
+      targets: '.tabs-animation__tab-2',
+      height: '135px',
+    }, '-=400'),
+    // ширина второго блока уменьшается
+    tb.add({
+      targets: '.tabs-animation__tab-2',
+      width: '47%',
+    }, '-=400'),
+    // второй блок исчезает
+    tb.add({
+      targets: '.tabs-animation__tab-2',
+      opacity: '0',
+    }, '-=400');
   // ..............
 }
 
