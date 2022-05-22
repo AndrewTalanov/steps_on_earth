@@ -121,29 +121,29 @@ function animationToggleNavMenu() {
     });
 
     tl.
-      add({
-        targets: '.search__nav',
-        width: '400px',
-        opacity: '1',
-        easing: 'easeOutElastic(1, .7)'
-      });
+    add({
+      targets: '.search__nav',
+      width: '400px',
+      opacity: '1',
+      easing: 'easeOutElastic(1, .7)'
+    });
     tl.
-      add({
-        targets: '.search__nav',
-        height: '610px',
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav',
+      height: '610px',
+      easing: 'easeInOutQuad'
+    });
     tl.
-      add({
-        targets: '.search__nav ul li',
-        opacity: [0, 1],
-        translateX: [80, 0],
-        duration: 500,
-        delay: function (el, i, l) {
-          return i * 250;
-        },
-        easing: 'easeOutElastic(1, 1)'
-      });
+    add({
+      targets: '.search__nav ul li',
+      opacity: [0, 1],
+      translateX: [80, 0],
+      duration: 500,
+      delay: function (el, i, l) {
+        return i * 250;
+      },
+      easing: 'easeOutElastic(1, 1)'
+    });
     sessionStorage.setItem('toggle-nav', 2);
   } else if (sessionStorage.getItem('toggle-nav') == 2) {
 
@@ -152,30 +152,30 @@ function animationToggleNavMenu() {
       duration: 200
     });
     tl.
-      add({
-        targets: '.search__nav ul li',
-        opacity: [1, 0],
-        translateX: [0, 80],
-        delay: function (el, i, l) {
-          return (l - i) * 200;
-        },
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav ul li',
+      opacity: [1, 0],
+      translateX: [0, 80],
+      delay: function (el, i, l) {
+        return (l - i) * 200;
+      },
+      easing: 'easeInOutQuad'
+    });
 
     tl.
-      add({
-        targets: '.search__nav',
-        height: '0px',
-        opacity: '1',
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav',
+      height: '0px',
+      opacity: '1',
+      easing: 'easeInOutQuad'
+    });
     tl.
-      add({
-        targets: '.search__nav',
-        width: '0px',
-        opacity: '0',
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav',
+      width: '0px',
+      opacity: '0',
+      easing: 'easeInOutQuad'
+    });
     sessionStorage.setItem('toggle-nav', 1);
   }
 }
@@ -187,20 +187,20 @@ function pageAnimIn() {
     duration: 800
   });
   tt.
-    add({
-      targets: '.page-transition',
-      scaleX: [0, 500],
-      scaleY: [0, 500],
-      easing: 'easeInOutQuad'
-    });
+  add({
+    targets: '.page-transition',
+    scaleX: [0, 500],
+    scaleY: [0, 500],
+    easing: 'easeInOutQuad'
+  });
   tt.
-    add({
-      targets: '.page-transition',
-      delay: 300,
-      scaleX: [500, 0],
-      scaleY: [500, 0],
-      easing: 'easeInOutQuad'
-    });
+  add({
+    targets: '.page-transition',
+    delay: 300,
+    scaleX: [500, 0],
+    scaleY: [500, 0],
+    easing: 'easeInOutQuad'
+  });
 }
 
 // 1. Анимация переключения табов (на главной) (срабатывает только при открытии сайта)
