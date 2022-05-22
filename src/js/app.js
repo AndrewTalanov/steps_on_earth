@@ -412,104 +412,98 @@ let contentDrop = document.querySelectorAll('.periods-items');
 
 btnDrop.forEach((item, id) => {
 
-    item.addEventListener('click', () => {
+  item.addEventListener('click', () => {
 
-        let showArrowContentAnimation = anime.timeline({
-            easing: 'easeOutExpo',
-            duration: 500,
+    let showArrowContentAnimation = anime.timeline({
+      easing: 'easeOutExpo',
+      duration: 300,
+    });
+
+    const interval = 400;
+
+    if (window.getComputedStyle(contentDrop[id]).opacity == 1) {
+
+      showArrowContentAnimation
+        .add({
+          targets: '.dropdown-info',
+          rotateX: 180,
+          delay: 200,
+        })
+        .add({
+          targets: contentDrop[id],
+          // translateY: [0, -50],
+          opacity: 0,
+          easing: 'easeInOutQuad',
+          duration: (el, i) => i * interval + interval,
         });
 
-        const interval = 400;
 
-        if (window.getComputedStyle(contentDrop[id]).opacity == 1) {
-            
-            console.log(window.getComputedStyle(contentDrop[id]).opacity);
+    } else if (window.getComputedStyle(contentDrop[id]).opacity == 0) {
 
-            showArrowContentAnimation
-                .add({
-                    targets: '.dropdown-info',
-                    rotateX: 180,
-                    delay: 300,
-                })
-                .add({
-                    targets: contentDrop[id],
-                    opacity: 1,
-                    easing: 'easeInOutQuad',
-                })
-                .add({
-                    targets: contentDrop[id],
-                    translateY: [-50, 0],
-                    opacity: [1, 0],
-                    easing: 'easeInOutQuad',
-                    duration: (el, i) => i * interval + interval,
-                });
+      showArrowContentAnimation
 
-            
+        .add({
+          targets: '.dropdown-info',
+          rotateX: 0,
+        })
 
-        } else if (window.getComputedStyle(contentDrop[id]).opacity == 0) {
-            console.log(window.getComputedStyle(contentDrop[id]).opacity);
+        .add({
+          targets: contentDrop[id],
+          opacity: [1],
+          // translateY: [-80, 0],
+          easing: 'easeInOutQuad',
 
-            showArrowContentAnimation
+        })
 
-                .add({
-                    targets: '.dropdown-info',
-                    rotateX: 0,
-                })
+        .add({
+          targets: '.group-wrapper',
+          opacity: 1,
+          translateY: [-80, 0],
+          // easing: 'easeOutSine',
+          // duration: (el, i) => i * interval + interval,
+        })
 
-                .add({
-                    targets: contentDrop[id],
-                    opacity: 0,
-                    easing: 'easeInExpo',
-                })
+        .add({
+          targets: '.item-1',
+          opacity: 1,
+          translateY: [-130, 0],
+          easing: 'easeOutSine',
+          duration: (el, i) => i * interval + interval,
+        })
 
-                .add({
-                    targets: '.group-wrapper',
-                    opacity: 0,
-                    easing: 'easeInOutQuad',
+        .add({
+          targets: '.item-2',
+          opacity: 1,
+          translateY: [-130, 0],
+          easing: 'easeOutSine',
+          duration: (el, i) => i * interval + interval,
+        })
 
-                })
+        .add({
+          targets: '.item-3',
+          opacity: 1,
+          translateY: [-130, 0],
+          easing: 'easeOutSine',
+          duration: (el, i) => i * interval + interval,
+        })
 
-                .add({
-                    targets: '.item-1',
-                    opacity: [0, 1],
-                    translateY: [-100, 0],
-                    easing: 'easeInExpo',
-                    duration: (el, i) => i * interval + interval,
-                })
+        .add({
+          targets: '.item-4',
+          opacity: 1,
+          translateY: [-130, 0],
+          easing: 'easeOutSine',
+          duration: (el, i) => i * interval + interval,
 
-                .add({
-                    targets: '.item-2',
-                    opacity: [0, 1],
-                    translateY: [-100, 0],
-                    easing: 'easeInExpo',
-                    duration: (el, i) => i * interval + interval,
-                })
-
-                .add({
-                    targets: '.item-3',
-                    opacity: [0, 1],
-                    translateY: [-100, 0],
-                    easing: 'easeInExpo',
-                    duration: (el, i) => i * interval + interval,
-                    delay: 100,
-                })
-                
-                .add({
-                    targets: '.item-4',
-                    opacity: [0, 1],
-                    translateY: [-100, 0],
-                    easing: 'easeInExpo',
-                    duration: (el, i) => i * interval + interval,
-                })
-                .add({
-                    targets: '.item-5',
-                    opacity: [0, 1],
-                    translateY: [-100, 0],
-                    easing: 'easeInExpo',
-                    duration: (el, i) => i * interval + interval,
-                });
-        }
-    });
+        })
+        .add({
+          targets: '.item-5',
+          opacity: 1,
+          translateY: [-130, 0],
+          easing: 'easeOutSine',
+          duration: (el, i) => i * interval + interval,
+        });
+    }
+  });
 });
 
 
@@ -526,5 +520,3 @@ btnDrop.forEach((item, id) => {
 //         currentTab.classList.toggle('active');
 //     });
 // });
-
-
