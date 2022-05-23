@@ -38,6 +38,7 @@ barba.init({
       addEventOnLinkNavMenu();
       navMenuOpenClose();
       choiseDisplayDefinitions();
+      togglePeriods();
 
       animationOpenSiteTabs();
       toggleTabs();
@@ -52,6 +53,7 @@ barba.init({
       await navMenuOpenClose();
       await animationOpenSiteTabs();
       await toggleTabs();
+      await togglePeriods();
     },
     async enter(data) {
       data.next.container.querySelector('.search__icon').addEventListener("click", () => {
@@ -121,29 +123,29 @@ function animationToggleNavMenu() {
     });
 
     tl.
-    add({
-      targets: '.search__nav',
-      width: '400px',
-      opacity: '1',
-      easing: 'easeOutElastic(1, .7)'
-    });
+      add({
+        targets: '.search__nav',
+        width: '400px',
+        opacity: '1',
+        easing: 'easeOutElastic(1, .7)'
+      });
     tl.
-    add({
-      targets: '.search__nav',
-      height: '610px',
-      easing: 'easeInOutQuad'
-    });
+      add({
+        targets: '.search__nav',
+        height: '610px',
+        easing: 'easeInOutQuad'
+      });
     tl.
-    add({
-      targets: '.search__nav ul li',
-      opacity: [0, 1],
-      translateX: [80, 0],
-      duration: 500,
-      delay: function (el, i, l) {
-        return i * 250;
-      },
-      easing: 'easeOutElastic(1, 1)'
-    });
+      add({
+        targets: '.search__nav ul li',
+        opacity: [0, 1],
+        translateX: [80, 0],
+        duration: 500,
+        delay: function (el, i, l) {
+          return i * 250;
+        },
+        easing: 'easeOutElastic(1, 1)'
+      });
     sessionStorage.setItem('toggle-nav', 2);
   } else if (sessionStorage.getItem('toggle-nav') == 2) {
 
@@ -152,30 +154,30 @@ function animationToggleNavMenu() {
       duration: 200
     });
     tl.
-    add({
-      targets: '.search__nav ul li',
-      opacity: [1, 0],
-      translateX: [0, 80],
-      delay: function (el, i, l) {
-        return (l - i) * 200;
-      },
-      easing: 'easeInOutQuad'
-    });
+      add({
+        targets: '.search__nav ul li',
+        opacity: [1, 0],
+        translateX: [0, 80],
+        delay: function (el, i, l) {
+          return (l - i) * 200;
+        },
+        easing: 'easeInOutQuad'
+      });
 
     tl.
-    add({
-      targets: '.search__nav',
-      height: '0px',
-      opacity: '1',
-      easing: 'easeInOutQuad'
-    });
+      add({
+        targets: '.search__nav',
+        height: '0px',
+        opacity: '1',
+        easing: 'easeInOutQuad'
+      });
     tl.
-    add({
-      targets: '.search__nav',
-      width: '0px',
-      opacity: '0',
-      easing: 'easeInOutQuad'
-    });
+      add({
+        targets: '.search__nav',
+        width: '0px',
+        opacity: '0',
+        easing: 'easeInOutQuad'
+      });
     sessionStorage.setItem('toggle-nav', 1);
   }
 }
@@ -187,20 +189,20 @@ function pageAnimIn() {
     duration: 800
   });
   tt.
-  add({
-    targets: '.page-transition',
-    scaleX: [0, 500],
-    scaleY: [0, 500],
-    easing: 'easeInOutQuad'
-  });
+    add({
+      targets: '.page-transition',
+      scaleX: [0, 500],
+      scaleY: [0, 500],
+      easing: 'easeInOutQuad'
+    });
   tt.
-  add({
-    targets: '.page-transition',
-    delay: 300,
-    scaleX: [500, 0],
-    scaleY: [500, 0],
-    easing: 'easeInOutQuad'
-  });
+    add({
+      targets: '.page-transition',
+      delay: 300,
+      scaleX: [500, 0],
+      scaleY: [500, 0],
+      easing: 'easeInOutQuad'
+    });
 }
 
 // 1. Анимация переключения табов (на главной) (срабатывает только при открытии сайта)
@@ -211,9 +213,9 @@ function animationOpenSiteTabs() {
   });
   // описание эры уходит
   tb.add({
-      targets: '.tab-2__description',
-      opacity: '0',
-    }, '-=400'),
+    targets: '.tab-2__description',
+    opacity: '0',
+  }, '-=400'),
     // высота второго блока уменьшается
     tb.add({
       targets: '.tabs-animation__tab-2',
@@ -370,102 +372,122 @@ function toggleTabs() {
   }
 }
 
+// 1. Включение/выключение периодов 
+function togglePeriods() {
+  let btnDrop = document.querySelectorAll('.dropdown-info');
+  let contentDrop = document.querySelectorAll('.periods-items');
 
-let btnDrop = document.querySelectorAll('.dropdown-info');
-let contentDrop = document.querySelectorAll('.periods-items');
+  btnDrop.forEach((item, id) => {
 
-btnDrop.forEach((item, id) => {
+    item.addEventListener('click', () => {
 
-  item.addEventListener('click', () => {
+      let showArrowContentAnimation = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 300,
+      });
 
-    let showArrowContentAnimation = anime.timeline({
-      easing: 'easeOutExpo',
-      duration: 300,
+      const interval = 400;
+
+      if (window.getComputedStyle(contentDrop[id]).opacity == 1) {
+
+        let item = "." + contentDrop[id].className + " .item";
+
+        showArrowContentAnimation
+          .add({
+            targets: btnDrop[id],
+            rotate: -90,
+          })
+          .add({
+            targets: item,
+            translateY: [0, -50],
+            easing: 'easeOutSine',
+          })
+          .add({
+            targets: contentDrop[id],
+            opacity: [1, 0],
+            easing: 'easeInOutQuad',
+          })
+          .add({
+            targets: contentDrop[id],
+            // height: 0,
+            easing: 'easeInOutQuad',
+          })
+
+
+      } else if (window.getComputedStyle(contentDrop[id]).opacity == 0) {
+
+        let item = "." + contentDrop[id].className + " .item";
+
+        showArrowContentAnimation
+
+          .add({
+            targets: btnDrop[id],
+            rotate: 0,
+          })
+          .add({
+            targets: contentDrop[id],
+            // height: 380,
+            easing: 'easeInOutQuad',
+          })
+
+          .add({
+            targets: contentDrop[id],
+            opacity: 1,
+            easing: 'easeInOutQuad',
+          })
+
+          .add({
+            targets: item,
+            translateY: [-50, 0],
+            delay: function (el, i, l) {
+              return i * 100;
+            },
+            easing: 'easeOutSine',
+          })
+
+          // .add({
+          //   targets: '.item-1',
+          //   opacity: 1,
+          //   translateY: [-130, 0],
+          //   easing: 'easeOutSine',
+          //   duration: (el, i) => i * interval + interval,
+          // })
+
+          // .add({
+          //   targets: '.item-2',
+          //   opacity: 1,
+          //   translateY: [-130, 0],
+          //   easing: 'easeOutSine',
+          //   duration: (el, i) => i * interval + interval,
+          // })
+
+          // .add({
+          //   targets: '.item-3',
+          //   opacity: 1,
+          //   translateY: [-130, 0],
+          //   easing: 'easeOutSine',
+          //   duration: (el, i) => i * interval + interval,
+          // })
+
+          // .add({
+          //   targets: '.item-4',
+          //   opacity: 1,
+          //   translateY: [-130, 0],
+          //   easing: 'easeOutSine',
+          //   duration: (el, i) => i * interval + interval,
+
+          // })
+          // .add({
+          //   targets: '.item-5',
+          //   opacity: 1,
+          //   translateY: [-130, 0],
+          //   easing: 'easeOutSine',
+          //   duration: (el, i) => i * interval + interval,
+          // });
+      }
     });
-
-    const interval = 400;
-
-    if (window.getComputedStyle(contentDrop[id]).opacity == 1) {
-
-      showArrowContentAnimation
-        .add({
-          targets: '.dropdown-info',
-          rotateX: 180,
-          delay: 200,
-        })
-        .add({
-          targets: contentDrop[id],
-          // translateY: [0, -50],
-          opacity: 0,
-          easing: 'easeInOutQuad',
-          duration: (el, i) => i * interval + interval,
-        });
-
-
-    } else if (window.getComputedStyle(contentDrop[id]).opacity == 0) {
-
-      showArrowContentAnimation
-
-        .add({
-          targets: '.dropdown-info',
-          rotateX: 0,
-        })
-
-        .add({
-          targets: contentDrop[id],
-          opacity: [1],
-          // translateY: [-80, 0],
-          easing: 'easeInOutQuad',
-
-        })
-
-        .add({
-          targets: '.group-wrapper',
-          opacity: 1,
-          translateY: [-80, 0],
-          // easing: 'easeOutSine',
-          // duration: (el, i) => i * interval + interval,
-        })
-
-        .add({
-          targets: '.item-1',
-          opacity: 1,
-          translateY: [-130, 0],
-          easing: 'easeOutSine',
-          duration: (el, i) => i * interval + interval,
-        })
-
-        .add({
-          targets: '.item-2',
-          opacity: 1,
-          translateY: [-130, 0],
-          easing: 'easeOutSine',
-          duration: (el, i) => i * interval + interval,
-        })
-
-        .add({
-          targets: '.item-3',
-          opacity: 1,
-          translateY: [-130, 0],
-          easing: 'easeOutSine',
-          duration: (el, i) => i * interval + interval,
-        })
-
-        .add({
-          targets: '.item-4',
-          opacity: 1,
-          translateY: [-130, 0],
-          easing: 'easeOutSine',
-          duration: (el, i) => i * interval + interval,
-
-        })
-        .add({
-          targets: '.item-5',
-          opacity: 1,
-          translateY: [-130, 0],
-          easing: 'easeOutSine',
-          duration: (el, i) => i * interval + interval,
-        });
-    }
   });
-});
+
+}
+
+
