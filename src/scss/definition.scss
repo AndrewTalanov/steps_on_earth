@@ -29,6 +29,9 @@
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
+
+          overflow: hidden;
+
           .item {
             cursor: pointer;
             display: flex;

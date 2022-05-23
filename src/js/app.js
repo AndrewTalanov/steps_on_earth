@@ -392,6 +392,8 @@ function togglePeriods() {
 
         let item = "." + contentDrop[id].className + " .item";
 
+        console.log(contentDrop[id]);
+
         showArrowContentAnimation
           .add({
             targets: btnDrop[id],
@@ -409,7 +411,9 @@ function togglePeriods() {
           })
           .add({
             targets: contentDrop[id],
-            // height: 0,
+            begin: function() {
+              contentDrop[id].style.display = 'none';
+            },
             easing: 'easeInOutQuad',
           })
 
@@ -426,7 +430,9 @@ function togglePeriods() {
           })
           .add({
             targets: contentDrop[id],
-            // height: 380,
+            begin: function() {
+              contentDrop[id].style.display = 'flex';
+            },
             easing: 'easeInOutQuad',
           })
 
@@ -439,51 +445,9 @@ function togglePeriods() {
           .add({
             targets: item,
             translateY: [-50, 0],
-            delay: function (el, i, l) {
-              return i * 100;
-            },
+            delay: anime.stagger(200),
             easing: 'easeOutSine',
-          })
-
-          // .add({
-          //   targets: '.item-1',
-          //   opacity: 1,
-          //   translateY: [-130, 0],
-          //   easing: 'easeOutSine',
-          //   duration: (el, i) => i * interval + interval,
-          // })
-
-          // .add({
-          //   targets: '.item-2',
-          //   opacity: 1,
-          //   translateY: [-130, 0],
-          //   easing: 'easeOutSine',
-          //   duration: (el, i) => i * interval + interval,
-          // })
-
-          // .add({
-          //   targets: '.item-3',
-          //   opacity: 1,
-          //   translateY: [-130, 0],
-          //   easing: 'easeOutSine',
-          //   duration: (el, i) => i * interval + interval,
-          // })
-
-          // .add({
-          //   targets: '.item-4',
-          //   opacity: 1,
-          //   translateY: [-130, 0],
-          //   easing: 'easeOutSine',
-          //   duration: (el, i) => i * interval + interval,
-
-          // })
-          // .add({
-          //   targets: '.item-5',
-          //   opacity: 1,
-          //   translateY: [-130, 0],
-          //   easing: 'easeOutSine',
-          //   duration: (el, i) => i * interval + interval,
-          // });
+          })      
       }
     });
   });
