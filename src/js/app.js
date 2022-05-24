@@ -59,7 +59,7 @@ barba.init({
       data.next.container.querySelector('.search__icon').addEventListener("click", () => {
         addEventOnLinkNavMenu();
         animationToggleNavMenu();
-      })
+      });
       choiseDisplayDefinitions();
     },
   }]
@@ -123,29 +123,29 @@ function animationToggleNavMenu() {
     });
 
     tl.
-      add({
-        targets: '.search__nav',
-        width: '400px',
-        opacity: '1',
-        easing: 'easeOutElastic(1, .7)'
-      });
+    add({
+      targets: '.search__nav',
+      width: '400px',
+      opacity: '1',
+      easing: 'easeOutElastic(1, .7)'
+    });
     tl.
-      add({
-        targets: '.search__nav',
-        height: '610px',
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav',
+      height: '610px',
+      easing: 'easeInOutQuad'
+    });
     tl.
-      add({
-        targets: '.search__nav ul li',
-        opacity: [0, 1],
-        translateX: [80, 0],
-        duration: 500,
-        delay: function (el, i, l) {
-          return i * 250;
-        },
-        easing: 'easeOutElastic(1, 1)'
-      });
+    add({
+      targets: '.search__nav ul li',
+      opacity: [0, 1],
+      translateX: [80, 0],
+      duration: 500,
+      delay: function (el, i, l) {
+        return i * 250;
+      },
+      easing: 'easeOutElastic(1, 1)'
+    });
     sessionStorage.setItem('toggle-nav', 2);
   } else if (sessionStorage.getItem('toggle-nav') == 2) {
 
@@ -154,30 +154,30 @@ function animationToggleNavMenu() {
       duration: 200
     });
     tl.
-      add({
-        targets: '.search__nav ul li',
-        opacity: [1, 0],
-        translateX: [0, 80],
-        delay: function (el, i, l) {
-          return (l - i) * 200;
-        },
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav ul li',
+      opacity: [1, 0],
+      translateX: [0, 80],
+      delay: function (el, i, l) {
+        return (l - i) * 200;
+      },
+      easing: 'easeInOutQuad'
+    });
 
     tl.
-      add({
-        targets: '.search__nav',
-        height: '0px',
-        opacity: '1',
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav',
+      height: '0px',
+      opacity: '1',
+      easing: 'easeInOutQuad'
+    });
     tl.
-      add({
-        targets: '.search__nav',
-        width: '0px',
-        opacity: '0',
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav',
+      width: '0px',
+      opacity: '0',
+      easing: 'easeInOutQuad'
+    });
     sessionStorage.setItem('toggle-nav', 1);
   }
 }
@@ -189,20 +189,20 @@ function pageAnimIn() {
     duration: 800
   });
   tt.
-    add({
-      targets: '.page-transition',
-      scaleX: [0, 500],
-      scaleY: [0, 500],
-      easing: 'easeInOutQuad'
-    });
+  add({
+    targets: '.page-transition',
+    scaleX: [0, 500],
+    scaleY: [0, 500],
+    easing: 'easeInOutQuad'
+  });
   tt.
-    add({
-      targets: '.page-transition',
-      delay: 300,
-      scaleX: [500, 0],
-      scaleY: [500, 0],
-      easing: 'easeInOutQuad'
-    });
+  add({
+    targets: '.page-transition',
+    delay: 300,
+    scaleX: [500, 0],
+    scaleY: [500, 0],
+    easing: 'easeInOutQuad'
+  });
 }
 
 // 1. Анимация переключения табов (на главной) (срабатывает только при открытии сайта)
@@ -213,9 +213,9 @@ function animationOpenSiteTabs() {
   });
   // описание эры уходит
   tb.add({
-    targets: '.tab-2__description',
-    opacity: '0',
-  }, '-=400'),
+      targets: '.tab-2__description',
+      opacity: '0',
+    }, '-=400'),
     // высота второго блока уменьшается
     tb.add({
       targets: '.tabs-animation__tab-2',
@@ -266,42 +266,42 @@ function toggleTabs() {
 
       // первый блок появляется
       tb1.add({
-        targets: '.tabs-animation__tab-1',
-        opacity: '1',
-        easing: 'easeInOutQuad'
-      })
-      // описание эры уходит
-      tb2.add({
-        targets: '.tab-2__description',
-        opacity: '0',
-        easing: 'easeInOutQuad'
-      })
-      // высота второго блока уменьшается
-      tb2.add({
-        targets: '.tabs-animation__tab-2',
-        height: '135px',
-        width: '44%',
-        easing: 'easeInOutQuad'
-      })
-      // ширина первого блока увеличивается
-      tb1.add({
-        targets: '.tabs-animation__tab-1',
-        width: '47%',
-        height: '220px',
-        easing: 'easeInOutQuad'
-      })
-      // второй блок исчезает
-      tb2.add({
-        targets: '.tabs-animation__tab-2',
-        opacity: '0',
-        easing: 'easeInOutQuad'
-      })
-      // описание первого блока появляется
-      tb1.add({
-        targets: '.tab-1__description',
-        opacity: '1',
-        easing: 'easeInOutQuad'
-      })
+          targets: '.tabs-animation__tab-1',
+          opacity: '1',
+          easing: 'easeInOutQuad'
+        }),
+        // описание эры уходит
+        tb2.add({
+          targets: '.tab-2__description',
+          opacity: '0',
+          easing: 'easeInOutQuad'
+        }),
+        // высота второго блока уменьшается
+        tb2.add({
+          targets: '.tabs-animation__tab-2',
+          height: '135px',
+          width: '44%',
+          easing: 'easeInOutQuad'
+        }),
+        // ширина первого блока увеличивается
+        tb1.add({
+          targets: '.tabs-animation__tab-1',
+          width: '47%',
+          height: '220px',
+          easing: 'easeInOutQuad'
+        }),
+        // второй блок исчезает
+        tb2.add({
+          targets: '.tabs-animation__tab-2',
+          opacity: '0',
+          easing: 'easeInOutQuad'
+        }),
+        // описание первого блока появляется
+        tb1.add({
+          targets: '.tab-1__description',
+          opacity: '1',
+          easing: 'easeInOutQuad'
+        });
     });
   }
 
@@ -325,49 +325,49 @@ function toggleTabs() {
 
       // костыль
       tb2.add({
-        targets: '.tabs-animation__tab-2',
-        width: '44%',
-        easing: 'easeInOutQuad'
-      }, '-=300')
-      // второй блок появляется
-      tb2.add({
-        targets: '.tabs-animation__tab-2',
-        opacity: '1',
-        easing: 'easeInOutQuad'
-      })
-      // описание первого блока уходит
-      tb1.add({
-        targets: '.tab-1__description',
-        opacity: '0',
-        easing: 'easeInOutQuad'
-      })
-      // ширина первого блока уменьшается
-      tb1.add({
-        targets: '.tabs-animation__tab-1',
-        width: '44%',
-        height: '135px',
-        easing: 'easeInOutQuad'
-      })
-      // ширина второго блока увеличивается
-      tb2.add({
-        targets: '.tabs-animation__tab-2',
-        width: '47%',
-        height: '220px',
-        easing: 'easeInOutQuad'
-      })
-      // первый блок исчезает
-      tb1.add({
-        targets: '.tabs-animation__tab-1',
-        opacity: '0',
-        easing: 'easeInOutQuad'
-      })
-      // описание второго блока появляется
-      tb2.add({
-        targets: '.tab-2__description',
-        left: '0',
-        opacity: '1',
-        easing: 'easeInOutQuad'
-      });
+          targets: '.tabs-animation__tab-2',
+          width: '44%',
+          easing: 'easeInOutQuad'
+        }, '-=300'),
+        // второй блок появляется
+        tb2.add({
+          targets: '.tabs-animation__tab-2',
+          opacity: '1',
+          easing: 'easeInOutQuad'
+        }),
+        // описание первого блока уходит
+        tb1.add({
+          targets: '.tab-1__description',
+          opacity: '0',
+          easing: 'easeInOutQuad'
+        }),
+        // ширина первого блока уменьшается
+        tb1.add({
+          targets: '.tabs-animation__tab-1',
+          width: '44%',
+          height: '135px',
+          easing: 'easeInOutQuad'
+        }),
+        // ширина второго блока увеличивается
+        tb2.add({
+          targets: '.tabs-animation__tab-2',
+          width: '47%',
+          height: '220px',
+          easing: 'easeInOutQuad'
+        }),
+        // первый блок исчезает
+        tb1.add({
+          targets: '.tabs-animation__tab-1',
+          opacity: '0',
+          easing: 'easeInOutQuad'
+        }),
+        // описание второго блока появляется
+        tb2.add({
+          targets: '.tab-2__description',
+          left: '0',
+          opacity: '1',
+          easing: 'easeInOutQuad'
+        });
     });
   }
 }
@@ -411,11 +411,11 @@ function togglePeriods() {
           })
           .add({
             targets: contentDrop[id],
-            begin: function() {
+            begin: function () {
               contentDrop[id].style.display = 'none';
             },
             easing: 'easeInOutQuad',
-          })
+          });
 
 
       } else if (window.getComputedStyle(contentDrop[id]).opacity == 0) {
@@ -430,7 +430,7 @@ function togglePeriods() {
           })
           .add({
             targets: contentDrop[id],
-            begin: function() {
+            begin: function () {
               contentDrop[id].style.display = 'flex';
             },
             easing: 'easeInOutQuad',
@@ -447,11 +447,9 @@ function togglePeriods() {
             translateY: [-50, 0],
             delay: anime.stagger(200),
             easing: 'easeOutSine',
-          })      
+          });
       }
     });
   });
 
 }
-
-
