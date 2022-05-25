@@ -3,6 +3,7 @@
   font-family: 'Rubik', sans-serif;
 
   &-main {
+    width: 100%;
     background: 100% 0 / cover  url("@img/back/gradient-definitions.png") no-repeat, 0 0 / 100% auto url("@img/back/stars.png") no-repeat, #08102E;
     height: 100vh;
     .content-inner {

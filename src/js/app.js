@@ -75,29 +75,114 @@ function funcInputRange() {
 
   const timing = [0, 3, 5, 7.24, 9.24, 12.22, 14.22, 16.22, 18.22, 20.22, 22.22, 24.22, 26.22, 28.22, 30.22, 32.22, 34.22, 36.22, 38.22, 42.10, 44.10, 46.10, 49, 51, 53, 55, 57];
 
-  let inputWidth = window.getComputedStyle(input).width;
-  let sliceInputWidth = inputWidth.substring(0, inputWidth.length - 2);
-  let width = sliceInputWidth / 60;
+  let inputWidth;
+  let sliceInputWidth;
+  let width;
 
-  dots.forEach((item, id) => {
-    console.log(item)
-    item.style.left = width * timing[id] + "px";
-  });
+  if (input != null || input != undefined) {
+    inputWidth = window.getComputedStyle(input).width;
+    sliceInputWidth = inputWidth.substring(0, inputWidth.length - 2);
+    width = sliceInputWidth / 60;
 
-  input.oninput = function () {
-    video.currentTime = this.value;
+    let idTiming;
 
-    timing.forEach((time, id) => {
-      if (video.currentTime >= time) {
-        dots[id].style.backgroundColor = "#00FFF0";
-      }
-      else if (video.currentTime < time) {
-        dots[id].style.backgroundColor = "white";
-      }
+    dots.forEach((item, id) => {
+      item.style.left = width * timing[id] + "px";
     });
 
+    input.oninput = function () {
+      video.currentTime = this.value;
+
+      timing.forEach((time, id) => {
+        if (video.currentTime >= time) {
+          dots[id].style.backgroundColor = "#00FFF0";
+
+          idTiming = id;
+          // changeIcon(id);
+        }
+        else if (video.currentTime < time) {
+          dots[id].style.backgroundColor = "white";
+        }
+      });
+    }
+    input.addEventListener("change", () => {
+      changeIcon(idTiming);
+    });
   }
 }
+
+// 1. Изменение иконок у периодов на главной в начале
+function changeIcon(idTiming) {
+  const iconContainer = document.querySelectorAll(".icon-container");
+
+  const numbersIconForPeriods = [
+    [1, 2, 3],
+    [2, 3, 4, 5, 6],
+    [4, 5, 6, 7],
+    [1, 3],
+    [1],
+    [6, 2],
+    [1, 2, 3, 5, 4, 7],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2],
+    [1, 2, 3],
+    [1, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+  ];
+
+  let nmb = numbersIconForPeriods[idTiming];
+
+  iconContainer.forEach((item, id) => {
+    item.innerHTML = "";
+  });
+
+  let flag = 0;
+  nmb.forEach((item, id) => {
+    if (nmb[id] != undefined) {
+      flag = id;
+
+      if (flag == 0) {
+        iconContainer[1].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+      } else if (flag == 1) {
+        iconContainer[4].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+      }  else if (flag == 2) {
+        iconContainer[0].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+      }  else if (flag == 3) {
+        iconContainer[2].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+      }  else if (flag == 4) {
+        iconContainer[3].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+      }  else if (flag == 5) {
+        iconContainer[5].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+      }
+    }
+
+  });
+
+  // iconContainer.forEach((item, id) => {
+  //   if (nmb[id] != undefined) {
+  //     console.log(nmb);
+  //     item.innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+  //   }
+  // });
+}
+
+
 
 // 1. По умолчанию записываем в sessionStorage флаг 1
 // 2. Получаем кнопку взаимодействия с нав меню со страницы, навешиваем обработчик событий, запускаем анимацию.
@@ -439,7 +524,7 @@ function togglePeriods() {
               contentDrop[id].style.display = 'none';
             },
             easing: 'easeInOutQuad',
-          })
+          });
 
 
       } else if (window.getComputedStyle(contentDrop[id]).opacity == 0) {
