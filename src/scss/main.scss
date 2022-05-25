@@ -3,6 +3,185 @@
     100% 0 / 100% url("@img/back/gradient.png") no-repeat,
     0 0 / 100% 165px url("@img/back/header.png") no-repeat, #08102e;
 
+  .section-earth {
+    .wrapper {
+      .earth-container {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        .icons {
+          width: 70px;
+          height: 100%;
+          background-color: red;
+          position: absolute;
+
+          &-1 {
+            left: 17%;
+          }
+
+          &-2 {
+            right: 17%;
+          }
+        }
+
+        .earth-video {
+          #video {
+            width: 100%;
+          }
+        }
+      }
+
+      .earth-range {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 3px;
+
+        #myRange {
+          width: 100%;
+          z-index: 1;
+        }
+
+        .mask {
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          background-color: #8C94B4;
+
+          .dot {
+            z-index: 0;
+            position: absolute;
+            left: 0;
+            top: -3px;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+          }
+
+          .dot-0 {
+            background-color: #00FFF0;
+            top: -8px;
+            width: 20px;
+            height: 20px;
+          }
+          .dot-15 {
+            top: -8px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      /* Hides the slider so that custom slider can be made */
+      width: 1000px;
+      /* Specific width is required for Firefox. */
+      background: transparent;
+      /* Otherwise white in Chrome */
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+
+    input[type=range]:focus {
+      outline: none;
+      /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+
+
+    // фигня круглая
+    input[type=range]::-ms-track {
+      width: 1000px;
+      cursor: pointer;
+
+      /* Hides the slider so custom styles can be added */
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      // z-index: 2;
+      -webkit-appearance: none;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background: #00FFF0;
+      cursor: pointer;
+      margin-top: -3px;
+      /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    }
+
+    /* All the same stuff for Firefox */
+    input[type=range]::-moz-range-thumb {
+      // z-index: 2;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background: #00FFF0;
+      cursor: pointer;
+    }
+
+
+    // трек
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 1000px;
+      height: 3px;
+      cursor: pointer;
+      background: rgba($color: #000000, $alpha: 0);
+      border-radius: 1.3px;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+      background: rgba($color: #000000, $alpha: 0);
+    }
+
+    input[type=range]::-moz-range-track {
+      width: 1000px;
+      height: 3px;
+      cursor: pointer;
+      background: rgba($color: #000000, $alpha: 0);
+      border-radius: 1.3px;
+    }
+
+    input[type=range]::-ms-track {
+      width: 1000px;
+      height: 3px;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    input[type=range]::-ms-fill-lower {
+      background: rgba($color: #000000, $alpha: 0);
+      border-radius: 1.3px;
+    }
+
+    input[type=range]:focus::-ms-fill-lower {
+      background: rgba($color: #000000, $alpha: 0);
+    }
+
+    input[type=range]::-ms-fill-upper {
+      background: rgba($color: #000000, $alpha: 0);
+      border-radius: 1.3px;
+    }
+
+    input[type=range]:focus::-ms-fill-upper {
+      background: rgba($color: #000000, $alpha: 0);
+    }
+  }
+
   .section-tabs {
     margin-top: 220px;
 
@@ -47,6 +226,18 @@
           .tab-1 {
             position: relative;
             left: 15%;
+            opacity: 1;
+            transition: .5s;
+          }
+
+          .tab-2 {
+            opacity: .5;
+            transition: .5s;
+          }
+
+          .tab-1:hover,
+          .tab-2:hover {
+            opacity: .75;
           }
 
           .tab-1__description {
@@ -245,7 +436,7 @@
                 }
 
                 &::before {
-                  z-index: -1;
+                  z-index: 0;
                   content: "";
                   position: absolute;
                   top: 0;
@@ -262,6 +453,7 @@
                 }
 
                 img {
+                  z-index: 1;
                   width: 120px;
                   margin-bottom: 35px;
                 }

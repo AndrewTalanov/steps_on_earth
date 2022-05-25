@@ -35,67 +35,67 @@ barba.init({
     sync: true,
     name: 'base',
     async once(data) {
-      addEventOnLinkNavMenu();
       navMenuOpenClose();
-      choiseDisplayDefinitions();
       togglePeriods();
+      funcInputRange();
 
       animationOpenSiteTabs();
       toggleTabs();
+
     },
     async leave(data) {
       const done = this.async();
+
       pageAnimIn();
+
       await delay(1000);
       done();
     },
     async beforeEnter(data) {
-      await navMenuOpenClose();
-      await animationOpenSiteTabs();
-      await toggleTabs();
-      await togglePeriods();
+      funcInputRange();
+      navMenuOpenClose();
+      animationOpenSiteTabs();
+      toggleTabs();
+      togglePeriods();
     },
     async enter(data) {
       data.next.container.querySelector('.search__icon').addEventListener("click", () => {
-        addEventOnLinkNavMenu();
         animationToggleNavMenu();
       })
-      choiseDisplayDefinitions();
     },
   }]
 });
 // ..........
 
-// 1. Получаем все элементы навигационного меню со страницы и навешиваем на них обработчик событий
-// 2. Записываем в sessionStorage id нажатой ссылки из nav menu
-function addEventOnLinkNavMenu() {
-  let links = document.querySelectorAll('.search__nav ul li a');
+// 1. range
+function funcInputRange() {
+  const video = document.getElementById('video');
+  const input = document.getElementById('myRange');
+  const dots = document.querySelectorAll(".dot");
 
-  links.forEach((item, id) => {
-    item.addEventListener("click", () => {
-      sessionStorage.setItem('key-nav', id);
-    });
+  const timing = [0, 3, 5, 7.24, 9.24, 12.22, 14.22, 16.22, 18.22, 20.22, 22.22, 24.22, 26.22, 28.22, 30.22, 32.22, 34.22, 36.22, 38.22, 42.10, 44.10, 46.10, 49, 51, 53, 55, 57];
+
+  let inputWidth = window.getComputedStyle(input).width;
+  let sliceInputWidth = inputWidth.substring(0, inputWidth.length - 2);
+  let width = sliceInputWidth / 60;
+
+  dots.forEach((item, id) => {
+    console.log(item)
+    item.style.left = width * timing[id] + "px";
   });
-}
 
-// 1. Определение какой блок "определений" показать
-// 2. Display block для подходящего блока
-function choiseDisplayDefinitions() {
-  let contentDefinitions = document.querySelectorAll('.content-ids');
-  // получение, номера контента что отображать на странице определений
-  let idNav = sessionStorage.getItem('key-nav');
+  input.oninput = function () {
+    video.currentTime = this.value;
 
-  if (idNav != null) {
-    if (contentDefinitions[idNav] != undefined || contentDefinitions[0] != null) {
-      if (idNav > 8) {
-        idNav = 9 % idNav;
+    timing.forEach((time, id) => {
+      if (video.currentTime >= time) {
+        dots[id].style.backgroundColor = "#00FFF0";
       }
-      contentDefinitions[idNav].style.display = 'block';
-    }
-  } else {
-    if (contentDefinitions[0] != undefined || contentDefinitions[0] != null) {
-      contentDefinitions[0].style.display = 'block';
-    }
+      else if (video.currentTime < time) {
+        dots[id].style.backgroundColor = "white";
+      }
+    });
+
   }
 }
 
@@ -270,6 +270,18 @@ function toggleTabs() {
         opacity: '1',
         easing: 'easeInOutQuad'
       })
+      // опасити 0 для заголовка
+      tb1.add({
+        targets: '.tab-2',
+        opacity: '.5',
+        easing: 'easeInOutQuad'
+      })
+      // опасити 1 для заголовка
+      tb2.add({
+        targets: '.tab-1',
+        opacity: 1,
+        easing: 'easeInOutQuad'
+      })
       // описание эры уходит
       tb2.add({
         targets: '.tab-2__description',
@@ -329,6 +341,18 @@ function toggleTabs() {
         width: '44%',
         easing: 'easeInOutQuad'
       }, '-=300')
+      // опасити 1 для заголовка
+      tb2.add({
+        targets: '.tab-2',
+        opacity: '1',
+        easing: 'easeInOutQuad'
+      })
+      // опасити 0 для заголовка
+      tb2.add({
+        targets: '.tab-1',
+        opacity: 0.5,
+        easing: 'easeInOutQuad'
+      })
       // второй блок появляется
       tb2.add({
         targets: '.tabs-animation__tab-2',
@@ -411,7 +435,7 @@ function togglePeriods() {
           })
           .add({
             targets: contentDrop[id],
-            begin: function() {
+            begin: function () {
               contentDrop[id].style.display = 'none';
             },
             easing: 'easeInOutQuad',
@@ -430,7 +454,7 @@ function togglePeriods() {
           })
           .add({
             targets: contentDrop[id],
-            begin: function() {
+            begin: function () {
               contentDrop[id].style.display = 'flex';
             },
             easing: 'easeInOutQuad',
@@ -447,11 +471,66 @@ function togglePeriods() {
             translateY: [-50, 0],
             delay: anime.stagger(200),
             easing: 'easeOutSine',
-          })      
+          })
       }
     });
   });
 
 }
+
+
+
+// 1. Переход между страницами определений
+// страница с определениями одна (data-barba-namespace), но контент для нее разный
+// из за чего переход с "определений" на "определения" не анимируется
+// function transitionBetweenOnePages(container) {
+//   let mainTag = container;
+//   const valueAttr = "definition";
+
+//   // console.log(container.querySelector('main'));
+//   if (mainTag != null || mainTag != undefined) {
+//     if (mainTag.hasAttribute("data-barba-namespace")) {
+//       if (mainTag.getAttribute("data-barba-namespace") == valueAttr) {
+//         mainTag.removeAttribute("data-barba-namespace");
+//         console.log(valueAttr + sessionStorage.getItem('key-nav'));
+//         mainTag.setAttribute("data-barba-namespace", valueAttr + sessionStorage.getItem('key-nav'));
+//       }
+//     }
+//   }
+// }
+
+
+// 1. Получаем все элементы навигационного меню со страницы и навешиваем на них обработчик событий
+// 2. Записываем в sessionStorage id нажатой ссылки из nav menu
+// function addEventOnLinkNavMenu() {
+//   let links = document.querySelectorAll('.search__nav ul li a');
+
+//   links.forEach((item, id) => {
+//     item.addEventListener("click", () => {
+//       sessionStorage.setItem('key-nav', id);
+//     });
+//   });
+// }
+
+// 1. Определение какой блок "определений" показать
+// 2. Display block для подходящего блока
+// function choiseDisplayDefinitions() {
+//   let contentDefinitions = document.querySelectorAll('.content-ids');
+//   // получение, номера контента что отображать на странице определений
+//   let idNav = sessionStorage.getItem('key-nav');
+
+//   if (idNav != null) {
+//     if (contentDefinitions[idNav] != undefined || contentDefinitions[0] != null) {
+//       if (idNav > 8) {
+//         idNav = 9 % idNav;
+//       }
+//       contentDefinitions[idNav].style.display = 'block';
+//     }
+//   } else {
+//     if (contentDefinitions[0] != undefined || contentDefinitions[0] != null) {
+//       contentDefinitions[0].style.display = 'block';
+//     }
+//   }
+// }
 
 
