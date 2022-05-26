@@ -98,7 +98,6 @@ function funcInputRange() {
           dots[id].style.backgroundColor = "#00FFF0";
 
           idTiming = id;
-          // changeIcon(id);
         }
         else if (video.currentTime < time) {
           dots[id].style.backgroundColor = "white";
@@ -107,6 +106,163 @@ function funcInputRange() {
     }
     input.addEventListener("change", () => {
       changeIcon(idTiming);
+
+      const btnTabOne = document.querySelector('.tab-11');
+      const btnTabTwo = document.querySelector('.tab-22');
+
+      const tabContentOne = document.querySelector('#tab_1');
+      const tabContentTwo = document.querySelector('#tab_2');
+
+      if (idTiming >= 15) {
+
+        if (btnTabTwo != null) {
+
+
+          // функционал
+          tabContentTwo.style.display = "flex";
+          tabContentOne.style.display = "none";
+
+          // анимация
+          var tb1 = anime.timeline({
+            easing: 'easeOutExpo',
+            duration: 300
+          });
+          // анимация
+          var tb2 = anime.timeline({
+            easing: 'easeOutExpo',
+            duration: 300
+          });
+
+          // костыль
+          // tb2.add({
+          //   targets: '.tabs-animation__tab-2',
+          //   width: '44%',
+          //   easing: 'easeInOutQuad'
+          // }, '-=300')
+          // опасити 1 для заголовка
+          tb2.add({
+            targets: '.tab-2',
+            opacity: '1',
+            easing: 'easeInOutQuad'
+          })
+          // опасити 0 для заголовка
+          tb2.add({
+            targets: '.tab-1',
+            opacity: 0.5,
+            easing: 'easeInOutQuad'
+          })
+          // второй блок появляется
+          tb2.add({
+            targets: '.tabs-animation__tab-2',
+            opacity: '1',
+            easing: 'easeInOutQuad'
+          })
+          // описание первого блока уходит
+          tb1.add({
+            targets: '.tab-1__description',
+            opacity: '0',
+            easing: 'easeInOutQuad'
+          })
+          // ширина первого блока уменьшается
+          tb1.add({
+            targets: '.tabs-animation__tab-1',
+            width: '44%',
+            height: '135px',
+            easing: 'easeInOutQuad'
+          })
+          // ширина второго блока увеличивается
+          tb2.add({
+            targets: '.tabs-animation__tab-2',
+            width: '47%',
+            height: '220px',
+            easing: 'easeInOutQuad'
+          })
+          // первый блок исчезает
+          tb1.add({
+            targets: '.tabs-animation__tab-1',
+            opacity: '0',
+            easing: 'easeInOutQuad'
+          })
+          // описание второго блока появляется
+          tb2.add({
+            targets: '.tab-2__description',
+            left: '0',
+            opacity: '1',
+            easing: 'easeInOutQuad'
+          });
+
+        }
+
+      }
+      else if (idTiming < 15) {
+        if (btnTabOne != null) {
+          tabContentOne.style.display = "flex";
+          tabContentTwo.style.display = "none";
+
+          // анимация
+          var tb1 = anime.timeline({
+            easing: 'easeOutExpo',
+            duration: 300
+          });
+          // анимация
+          var tb2 = anime.timeline({
+            easing: 'easeOutExpo',
+            duration: 300
+          });
+
+          // первый блок появляется
+          tb1.add({
+            targets: '.tabs-animation__tab-1',
+            opacity: '1',
+            easing: 'easeInOutQuad'
+          })
+          // опасити 0 для заголовка
+          tb1.add({
+            targets: '.tab-2',
+            opacity: '.5',
+            easing: 'easeInOutQuad'
+          })
+          // опасити 1 для заголовка
+          tb2.add({
+            targets: '.tab-1',
+            opacity: 1,
+            easing: 'easeInOutQuad'
+          })
+          // описание эры уходит
+          tb2.add({
+            targets: '.tab-2__description',
+            opacity: '0',
+            easing: 'easeInOutQuad'
+          })
+          // высота второго блока уменьшается
+          tb2.add({
+            targets: '.tabs-animation__tab-2',
+            height: '135px',
+            width: '44%',
+            easing: 'easeInOutQuad'
+          })
+          // ширина первого блока увеличивается
+          tb1.add({
+            targets: '.tabs-animation__tab-1',
+            width: '47%',
+            height: '220px',
+            easing: 'easeInOutQuad'
+          })
+          // второй блок исчезает
+          tb2.add({
+            targets: '.tabs-animation__tab-2',
+            opacity: '0',
+            easing: 'easeInOutQuad'
+          })
+          // описание первого блока появляется
+          tb1.add({
+            targets: '.tab-1__description',
+            opacity: '1',
+            easing: 'easeInOutQuad'
+          })
+        }
+      }
+
     });
   }
 }
@@ -161,13 +317,13 @@ function changeIcon(idTiming) {
         iconContainer[1].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
       } else if (flag == 1) {
         iconContainer[4].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
-      }  else if (flag == 2) {
+      } else if (flag == 2) {
         iconContainer[0].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
-      }  else if (flag == 3) {
+      } else if (flag == 3) {
         iconContainer[2].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
-      }  else if (flag == 4) {
+      } else if (flag == 4) {
         iconContainer[3].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
-      }  else if (flag == 5) {
+      } else if (flag == 5) {
         iconContainer[5].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
       }
     }
@@ -321,11 +477,11 @@ function animationOpenSiteTabs() {
 
 // 1. Функционал переключения табов (на главной)
 function toggleTabs() {
-  let btnTabOne = document.querySelector('.tab-11');
-  let btnTabTwo = document.querySelector('.tab-22');
+  const btnTabOne = document.querySelector('.tab-11');
+  const btnTabTwo = document.querySelector('.tab-22');
 
-  let tabContentOne = document.querySelector('#tab_1');
-  let tabContentTwo = document.querySelector('#tab_2');
+  const tabContentOne = document.querySelector('#tab_1');
+  const tabContentTwo = document.querySelector('#tab_2');
 
 
   if (btnTabOne != null) {
