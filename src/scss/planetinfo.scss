@@ -1,177 +1,182 @@
-.planet-info__container {
-    display: flex;
-    &__left {
-        margin-top: 90px;
-
-        .planet-img-container {
-            right: 250px;
-            position: relative;
-            display: flex;
-
-            .img-big-planet {
-                width: 650px;
-                height: 651px;
-            }
-
-            .icon {
-                position: absolute;
-                left: 320px;
-                transform-origin: 35px 400px;
-                top: -80px;
-                opacity: 0.4;
-
-                & img {
-                    width: 70px;
-                    height: 70px;
-                }
-
-                &.active {
-                    display: flex;
-                    border-radius: 50%;
-                    opacity: 1;
-                    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.44);
-                }
-            }
-
-            .icon-1 {
-                & img {
-                    transform: rotate(0deg);
-                }
-            }
-
-            .icon-2 {
-                transform: rotate(30deg);
-
-                & img {
-                    transform: rotate(330deg);
-                }
-            }
-
-            .icon-3 {
-                transform: rotate(60deg);
-
-                & img {
-                    transform: rotate(300deg);
-                }
-            }
-
-            .icon-4 {
-                transform: rotate(90deg);
-
-                & img {
-                    transform: rotate(270deg);
-                }
-            }
-
-            .icon-5 {
-                transform: rotate(120deg);
-
-                & img {
-                    transform: rotate(240deg);
-                }
-            }
-
-            .icon-6 {
-                transform: rotate(150deg);
-
-                & img {
-                    transform: rotate(210deg);
-                }
-            }
-
-            .icon-7 {
-                transform: rotate(180deg);
-
-                & img {
-                    transform: rotate(180deg);
-                }
-            }
-
-        }
-    }
-
-    &__right {
+.planetinfo { 
+    background: 100% 0 / 100% 100% url("@img/back/gradient-planetinfo.png") no-repeat, 0 0 / 100% auto url("@img/back/stars.png") no-repeat, #08102E;
+    padding: 0 0 200px 0;
+    .planet-info__container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        margin-top: 33%;
-        gap: 145px;
 
-        .about-planet-container {
+        &__left {
+            margin-top: 90px;
+
+            .planet-img-container {
+                right: 250px;
+                position: relative;
+                display: flex;
+
+                .img-big-planet {
+                    width: 650px;
+                    height: 651px;
+                }
+
+                .icon {
+                    position: absolute;
+                    left: 320px;
+                    transform-origin: 35px 400px;
+                    top: -80px;
+                    opacity: 0.4;
+
+                    & img {
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    &.active {
+                        display: flex;
+                        border-radius: 50%;
+                        opacity: 1;
+                        box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.44);
+                    }
+                }
+
+                .icon-1 {
+                    & img {
+                        transform: rotate(0deg);
+                    }
+                }
+
+                .icon-2 {
+                    transform: rotate(30deg);
+
+                    & img {
+                        transform: rotate(330deg);
+                    }
+                }
+
+                .icon-3 {
+                    transform: rotate(60deg);
+
+                    & img {
+                        transform: rotate(300deg);
+                    }
+                }
+
+                .icon-4 {
+                    transform: rotate(90deg);
+
+                    & img {
+                        transform: rotate(270deg);
+                    }
+                }
+
+                .icon-5 {
+                    transform: rotate(120deg);
+
+                    & img {
+                        transform: rotate(240deg);
+                    }
+                }
+
+                .icon-6 {
+                    transform: rotate(150deg);
+
+                    & img {
+                        transform: rotate(210deg);
+                    }
+                }
+
+                .icon-7 {
+                    transform: rotate(180deg);
+
+                    & img {
+                        transform: rotate(180deg);
+                    }
+                }
+
+            }
+        }
+
+        &__right {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 33%;
+            gap: 145px;
 
-            & h2 {
-                font-size: 40px;
-            }
+            .about-planet-container {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
 
-            & h3 {
-                font-style: italic;
-                font-weight: 400;
-                font-size: 25px;
-            }
-
-            & p {
-                font-size: 20px;
-                padding-top: 57px;
-            }
-        }
-
-        .planet-slider-container {
-            width: 330px;
-            background-color: violet;
-            height: 130px;
-        }
-    }
-
-}
-
-.reference__planet__container {
-    margin-top: 170px;
-    display: flex;
-    flex-direction: column;
-    gap: 95px;
-
-    &-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 42px;
-
-        .reference {
-            &-icon {
-                & img {
-                    width: 70px;
-                    height: 70px;
+                & h2 {
+                    font-size: 40px;
                 }
 
-                &.active {
-                    display: flex;
-                    border-radius: 50%;
-                    opacity: 1;
-                    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.44);
+                & h3 {
+                    font-style: italic;
+                    font-weight: 400;
+                    font-size: 25px;
                 }
-            }
-
-            &-information {
-                width: 100%;
-                background-color: #FFFFFF;
-                box-shadow: 4px 4px 50px 10px rgba(255, 255, 255, 0.5);
-                border-radius: 50px;
-                position: relative;
-                padding: 9px 76px 38px 48px;
 
                 & p {
-                    padding: 25px 0 0 0;
-                    z-index: 1;
-                    color: black;
-                    font-size: 14px;
-                    line-height: 17px;
+                    font-size: 20px;
+                    padding-top: 57px;
+                }
+            }
+
+            .planet-slider-container {
+                width: 330px;
+                background-color: violet;
+                height: 130px;
+            }
+        }
+
+    }
+
+    .reference__planet__container {
+        margin-top: 170px;
+        display: flex;
+        flex-direction: column;
+        gap: 95px;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 42px;
+
+            .reference {
+                &-icon {
+                    & img {
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    &.active {
+                        display: flex;
+                        border-radius: 50%;
+                        opacity: 1;
+                        box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.44);
+                    }
+                }
+
+                &-information {
+                    width: 100%;
+                    background-color: #FFFFFF;
+                    box-shadow: 4px 4px 50px 10px rgba(255, 255, 255, 0.5);
+                    border-radius: 50px;
+                    position: relative;
+                    padding: 9px 76px 38px 48px;
+
+                    & p {
+                        padding: 25px 0 0 0;
+                        z-index: 1;
+                        color: black;
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
                 }
             }
         }
-    }
 
+    }
 }
