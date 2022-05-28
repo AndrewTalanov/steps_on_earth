@@ -109,16 +109,19 @@
                 gap: 30px;
 
                 & h2 {
+                    font-family: 'Rubik';
                     font-size: 40px;
                 }
 
                 & h3 {
+                    font-family: 'Rubik';
                     font-style: italic;
                     font-weight: 400;
                     font-size: 25px;
                 }
 
                 & p {
+                    font-family: 'Rubik';
                     font-size: 20px;
                     padding-top: 57px;
                 }
@@ -126,8 +129,87 @@
 
             .planet-slider-container {
                 width: 330px;
-                background-color: violet;
                 height: 130px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .level-1 {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+
+                    .numbers {
+                        display: flex;
+                        align-items: flex-end;
+
+                        .first {
+                            p {
+                                font-family: 'Rubik';
+                                font-size: 64px;
+                                font-weight: 700;
+                            }
+                        }
+
+                        .palka {
+                            p {
+                                font-family: 'Rubik';
+                                font-size: 64px;
+                                font-weight: 700;
+                            }
+                        }
+
+                        .second {
+                            p {
+                                font-family: 'Rubik';
+                                font-size: 24px;
+                                font-weight: 700;
+                                line-height: 45px;
+                            }
+                        }
+                    }
+
+                    .name {
+                        margin-bottom: 10px;
+
+                        p {
+                            font-family: 'Rubik';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .level-2 {
+                    display: flex;
+                    gap: 40px;
+                    margin-left: 15px;
+
+                    .left {
+                        transform: rotate(90deg);
+                    }
+
+                    .right {
+                        transform: rotate(-90deg);
+                    }
+                }
+
+                .progressbar {
+                    width: 100%;
+                    height: 2px;
+                    background-color: #fff;
+                    position: relative;
+
+                    .progressbar-ch {
+                        position: absolute;
+                        height: 4px;
+                        left: 0;
+                        width: calc(100% / 3);
+                        top: -1px;
+                        background-color: #fff;
+                    }
+                }
             }
         }
 
@@ -138,6 +220,7 @@
         display: flex;
         flex-direction: column;
         gap: 95px;
+        font-family: 'Rubik';
 
         &-item {
             display: flex;
