@@ -1,8 +1,28 @@
 .main-page-main {
   background: url("@img/back/stars.png"),
-    0px 1700px / 100% url("@img/back/back11.png") no-repeat,
     100% 0 / 100% url("@img/back/gradient.png") no-repeat,
     0 0 / 100% 165px url("@img/back/header.png") no-repeat, #08102e;
+
+
+  .bg-astro {
+    background: url("@img/back/back11.png") no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 2100px;
+    top: 260%;
+    background-position: right;
+    animation: move 8s linear infinite alternate;
+
+    @keyframes move {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(-37px, -40px);
+      }
+    }
+  }
 
   .section-earth {
     .wrapper {
@@ -20,14 +40,19 @@
           flex-direction: column;
           justify-content: center;
           gap: 40px;
+
           .icon-container {
             width: 50px;
             height: 50px;
           }
-          .icon-container-1, .icon-container-3 {
+
+          .icon-container-1,
+          .icon-container-3 {
             margin-left: 50px;
           }
-          .icon-container-4, .icon-container-6 {
+
+          .icon-container-4,
+          .icon-container-6 {
             margin-right: 50px;
           }
 
@@ -86,6 +111,7 @@
             width: 20px;
             height: 20px;
           }
+
           .dot-15 {
             top: -8px;
             width: 20px;
@@ -356,14 +382,29 @@
               }
 
               .phase__image {
-                .karhey-moon-img {
-                  position: absolute;
-                  top: 65%;
-                  right: 100%;
-                }
-
                 position: relative;
                 top: 70px;
+
+                .katarhey-moon-img {
+                  position: absolute;
+                  top: 63%;
+                  right: 83%;
+                  animation: moving 20s infinite linear;
+                  transform-origin: 147% 0%;
+                  z-index: 1;
+
+                  @keyframes moving {
+                    100% {
+                      transform: rotate(-360deg);
+                    }
+                  }
+                }
+
+                .katarhey-phase {
+                  position: inherit;
+                  z-index: 1;
+                }
+
               }
             }
           }
@@ -371,6 +412,7 @@
           .periods {
             width: 85%;
             margin: 0 auto;
+
             #drop_2 {
               margin-top: 40px;
             }

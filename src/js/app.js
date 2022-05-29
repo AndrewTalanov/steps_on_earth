@@ -51,7 +51,7 @@ barba.init({
       await delay(1000);
       done();
     },
-    async beforeEnter(data) {    
+    async beforeEnter(data) {
       funcInputRange();
       navMenuOpenClose();
       animationOpenSiteTabs();
@@ -106,8 +106,7 @@ function funcInputRange() {
           dots[id].style.backgroundColor = "#00FFF0";
 
           idTiming = id;
-        }
-        else if (video.currentTime < time) {
+        } else if (video.currentTime < time) {
           dots[id].style.backgroundColor = "white";
         }
       });
@@ -201,8 +200,7 @@ function funcInputRange() {
 
         }
 
-      }
-      else if (idTiming < 15) {
+      } else if (idTiming < 15) {
         if (btnTabOne != null) {
           tabContentOne.style.display = "flex";
           tabContentTwo.style.display = "none";
@@ -372,29 +370,29 @@ function animationToggleNavMenu() {
     });
 
     tl.
-      add({
-        targets: '.search__nav',
-        width: '400px',
-        opacity: '1',
-        easing: 'easeOutElastic(1, .7)'
-      });
+    add({
+      targets: '.search__nav',
+      width: '400px',
+      opacity: '1',
+      easing: 'easeOutElastic(1, .7)'
+    });
     tl.
-      add({
-        targets: '.search__nav',
-        height: '610px',
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav',
+      height: '610px',
+      easing: 'easeInOutQuad'
+    });
     tl.
-      add({
-        targets: '.search__nav ul li',
-        opacity: [0, 1],
-        translateX: [80, 0],
-        duration: 500,
-        delay: function (el, i, l) {
-          return i * 250;
-        },
-        easing: 'easeOutElastic(1, 1)'
-      });
+    add({
+      targets: '.search__nav ul li',
+      opacity: [0, 1],
+      translateX: [80, 0],
+      duration: 500,
+      delay: function (el, i, l) {
+        return i * 250;
+      },
+      easing: 'easeOutElastic(1, 1)'
+    });
     sessionStorage.setItem('toggle-nav', 2);
   } else if (sessionStorage.getItem('toggle-nav') == 2) {
 
@@ -403,30 +401,30 @@ function animationToggleNavMenu() {
       duration: 200
     });
     tl.
-      add({
-        targets: '.search__nav ul li',
-        opacity: [1, 0],
-        translateX: [0, 80],
-        delay: function (el, i, l) {
-          return (l - i) * 200;
-        },
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav ul li',
+      opacity: [1, 0],
+      translateX: [0, 80],
+      delay: function (el, i, l) {
+        return (l - i) * 200;
+      },
+      easing: 'easeInOutQuad'
+    });
 
     tl.
-      add({
-        targets: '.search__nav',
-        height: '0px',
-        opacity: '1',
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav',
+      height: '0px',
+      opacity: '1',
+      easing: 'easeInOutQuad'
+    });
     tl.
-      add({
-        targets: '.search__nav',
-        width: '0px',
-        opacity: '0',
-        easing: 'easeInOutQuad'
-      });
+    add({
+      targets: '.search__nav',
+      width: '0px',
+      opacity: '0',
+      easing: 'easeInOutQuad'
+    });
     sessionStorage.setItem('toggle-nav', 1);
   }
 }
@@ -438,20 +436,20 @@ function pageAnimIn() {
     duration: 800
   });
   tt.
-    add({
-      targets: '.page-transition',
-      scaleX: [0, 500],
-      scaleY: [0, 500],
-      easing: 'easeInOutQuad'
-    });
+  add({
+    targets: '.page-transition',
+    scaleX: [0, 500],
+    scaleY: [0, 500],
+    easing: 'easeInOutQuad'
+  });
   tt.
-    add({
-      targets: '.page-transition',
-      delay: 300,
-      scaleX: [500, 0],
-      scaleY: [500, 0],
-      easing: 'easeInOutQuad'
-    });
+  add({
+    targets: '.page-transition',
+    delay: 300,
+    scaleX: [500, 0],
+    scaleY: [500, 0],
+    easing: 'easeInOutQuad'
+  });
 }
 
 // 1. Анимация переключения табов (на главной) (срабатывает только при открытии сайта)
@@ -462,9 +460,9 @@ function animationOpenSiteTabs() {
   });
   // описание эры уходит
   tb.add({
-    targets: '.tab-2__description',
-    opacity: '0',
-  }, '-=400'),
+      targets: '.tab-2__description',
+      opacity: '0',
+    }, '-=400'),
     // высота второго блока уменьшается
     tb.add({
       targets: '.tabs-animation__tab-2',
@@ -727,6 +725,14 @@ function togglePeriods() {
 
 }
 
+// const parallax = document.querySelector('.bg-astro');
+// window.addEventListener('mousemove', function(e) {
+//   let x = e.clientX / window.innerWidth;
+//   let y = e.clientY / window.innerHeight;  
+//   parallax.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
+// });
+
+
 
 
 // 1. Переход между страницами определений
@@ -781,5 +787,3 @@ function togglePeriods() {
 //     }
 //   }
 // }
-
-
