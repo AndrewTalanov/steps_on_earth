@@ -51,7 +51,7 @@ barba.init({
       await delay(1000);
       done();
     },
-    async beforeEnter(data) {
+    async beforeEnter(data) {    
       funcInputRange();
       navMenuOpenClose();
       animationOpenSiteTabs();
@@ -63,9 +63,17 @@ barba.init({
         animationToggleNavMenu();
       })
     },
+    async afterEnter(data) {
+      moveScroll();
+    },
   }]
 });
 // ..........
+
+// 1. scroll on top
+function moveScroll() {
+  window.scrollTo(0, 0);
+}
 
 // 1. range
 function funcInputRange() {
