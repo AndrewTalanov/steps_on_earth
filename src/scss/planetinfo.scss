@@ -246,7 +246,7 @@
 
             .planet-slider-container {
                 width: 50%;
-                height: 130px;
+                height: 140px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -447,7 +447,9 @@
                 font-style: italic;
                 font-size: 12px;
                 text-align: end;
+                margin-top: 5px;
                 @media (min-width: 1700px) {
+                    // line-height: 37px;
                     font-size: 18px;                
                 }
               }
