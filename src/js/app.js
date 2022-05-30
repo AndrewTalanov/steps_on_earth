@@ -28,7 +28,6 @@ function delay(n) {
     }, n);
   });
 }
-// основа
 barba.init({
   debug: true,
   transitions: [{
