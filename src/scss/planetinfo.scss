@@ -1,0 +1,586 @@
+.planetinfo-main {
+    background: 100% 0 / 100% 100% url("@img/back/gradient-planetinfo.png") no-repeat, 0 0 / 100% auto url("@img/back/stars.png") no-repeat, #08102E;
+    padding: 0 0 200px 0;
+
+    .planet-info__container {
+        display: flex;
+
+        &__left {
+            margin-top: 90px;
+
+            .planet-img-container {
+                right: 250px;
+                position: relative;
+                display: flex;
+
+                .img-big-planet {
+                    width: 650px;
+                    height: 651px;
+                }
+
+                .icon {
+                    position: absolute;
+                    left: 320px;
+                    transform-origin: 35px 400px;
+                    top: -80px;
+                    opacity: 0.4;
+
+                    & img {
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    &.active {
+                        display: flex;
+                        border-radius: 50%;
+                        opacity: 1;
+                        box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.44);
+                    }
+                }
+
+                .icon-1 {
+                    & img {
+                        transform: rotate(0deg);
+                    }
+                }
+
+                .icon-2 {
+                    transform: rotate(30deg);
+
+                    & img {
+                        transform: rotate(330deg);
+                    }
+                }
+
+                .icon-3 {
+                    transform: rotate(60deg);
+
+                    & img {
+                        transform: rotate(300deg);
+                    }
+                }
+
+                .icon-4 {
+                    transform: rotate(90deg);
+
+                    & img {
+                        transform: rotate(270deg);
+                    }
+                }
+
+                .icon-5 {
+                    transform: rotate(120deg);
+
+                    & img {
+                        transform: rotate(240deg);
+                    }
+                }
+
+                .icon-6 {
+                    transform: rotate(150deg);
+
+                    & img {
+                        transform: rotate(210deg);
+                    }
+                }
+
+                .icon-7 {
+                    transform: rotate(180deg);
+
+                    & img {
+                        transform: rotate(180deg);
+                    }
+                }
+
+            }
+        }
+
+        &__right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 33%;
+            gap: 145px;
+
+            .about-planet-container {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                & h2 {
+                    font-family: 'Rubik';
+                    font-size: 40px;
+                }
+
+                & h3 {
+                    font-family: 'Rubik';
+                    font-style: italic;
+                    font-weight: 400;
+                    font-size: 25px;
+                }
+
+                & p {
+                    font-family: 'Rubik';
+                    font-size: 20px;
+                    padding-top: 57px;
+                }
+            }
+
+            .planet-slider-container {
+                width: 330px;
+                height: 130px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .level-1 {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+
+                    .numbers {
+                        display: flex;
+                        align-items: flex-end;
+
+                        .first {
+                            p {
+                                font-family: 'Rubik';
+                                font-size: 64px;
+                                font-weight: 700;
+                            }
+                        }
+
+                        .palka {
+                            p {
+                                font-family: 'Rubik';
+                                font-size: 64px;
+                                font-weight: 700;
+                            }
+                        }
+
+                        .second {
+                            p {
+                                font-family: 'Rubik';
+                                font-size: 24px;
+                                font-weight: 700;
+                                line-height: 45px;
+                            }
+                        }
+                    }
+
+                    .name {
+                        margin-bottom: 10px;
+
+                        p {
+                            font-family: 'Rubik';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .level-2 {
+                    display: flex;
+                    gap: 40px;
+                    margin-left: 15px;
+
+                    .left {
+                        transform: rotate(90deg);
+                    }
+
+                    .right {
+                        transform: rotate(-90deg);
+                    }
+                }
+
+                .progressbar {
+                    width: 100%;
+                    height: 2px;
+                    background-color: #fff;
+                    position: relative;
+
+                    .progressbar-ch {
+                        position: absolute;
+                        height: 4px;
+                        left: 0;
+                        width: calc(100% / 3);
+                        top: -1px;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+
+        &__eras {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+
+            .about-planet-container {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                gap: 20px;
+
+                & h2 {
+                    font-family: 'Rubik';
+                    font-size: 40px;
+                }
+
+                & h3 {
+                    font-family: 'Rubik';
+                    font-style: italic;
+                    font-weight: 400;
+                    font-size: 25px;
+                }
+
+                & p {
+                    font-family: 'Rubik';
+                    font-size: 20px;
+                    // padding-top: 57px;
+                }
+            }
+
+            .planet-slider-container {
+                width: 50%;
+                height: 140px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 20px;
+
+                .level-1 {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+
+                    .numbers {
+                        display: flex;
+                        align-items: flex-end;
+
+                        .first {
+                            p {
+                                font-family: 'Rubik';
+                                font-size: 64px;
+                                font-weight: 700;
+                            }
+                        }
+
+                        .palka {
+                            p {
+                                font-family: 'Rubik';
+                                font-size: 64px;
+                                font-weight: 700;
+                            }
+                        }
+
+                        .second {
+                            p {
+                                font-family: 'Rubik';
+                                font-size: 24px;
+                                font-weight: 700;
+                                line-height: 45px;
+                            }
+                        }
+                    }
+
+                    .name {
+                        margin-bottom: 10px;
+
+                        p {
+                            font-family: 'Rubik';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .level-2 {
+                    display: flex;
+                    gap: 40px;
+                    margin-left: 15px;
+
+                    .left {
+                        transform: rotate(90deg);
+                    }
+
+                    .right {
+                        transform: rotate(-90deg);
+                    }
+                }
+
+                .progressbar {
+                    width: 100%;
+                    height: 2px;
+                    background-color: #fff;
+                    position: relative;
+
+                    .progressbar-ch {
+                        position: absolute;
+                        height: 4px;
+                        left: 0;
+                        width: calc(100% / 3);
+                        top: -1px;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .reference__planet__container {
+        margin-top: 170px;
+        display: flex;
+        flex-direction: column;
+        gap: 95px;
+        font-family: 'Rubik';
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 42px;
+
+            .reference {
+                &-icon {
+                    & img {
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    &.active {
+                        display: flex;
+                        border-radius: 50%;
+                        opacity: 1;
+                        box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.44);
+                    }
+                }
+
+                &-information {
+                    width: 100%;
+                    background-color: #FFFFFF;
+                    box-shadow: 4px 4px 50px 10px rgba(255, 255, 255, 0.5);
+                    border-radius: 50px;
+                    position: relative;
+                    padding: 9px 76px 38px 48px;
+
+                    & p {
+                        padding: 25px 0 0 0;
+                        z-index: 1;
+                        color: black;
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+// ...
+.era_container {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    // align-items: center;
+    .block-info__item {
+        background:
+          radial-gradient(43.56% 75.24% at 50% 0%, rgba(92, 246, 236, 0.6) 10%, rgba(255, 255, 255, 0) 100%),
+          linear-gradient(0deg, #212843, #212843) padding-box,
+          linear-gradient(to left, #00FFF0, rgba(0, 0, 0, 0)) border-box;
+        border: 2px solid transparent;
+        box-shadow: 7px 10px 6px rgba(0, 0, 0, 0.25);
+        width: 750px;
+        height: 325px;
+        border-radius: 30px;
+        display: flex;
+        padding: 40px 50px 40px 30px;
+        box-sizing: border-box;
+        gap: 70px;
+        @media (min-width: 1700px) {
+            width: 100%;
+            height: 430px;   
+        }
+        .block-info__planet {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 30px;
+            
+          img {
+            width: 200px;
+            height: 200px;
+            @media (min-width: 1700px) {
+                width: 300px;
+                height: 300px;   
+            }
+          }
+      
+          .block-info__name {
+            font-family: Rubik;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            align-items: flex-start;
+            @media (min-width: 1700px) {
+                font-size: 26px;                
+            }
+      
+            .block-info__title {
+              p {
+                font-weight: 600;
+              }
+            }
+      
+            .block-info__undertitle {
+              p {
+                font-style: italic;
+                font-size: 12px;
+                text-align: end;
+                margin-top: 5px;
+                @media (min-width: 1700px) {
+                    // line-height: 37px;
+                    font-size: 18px;                
+                }
+              }
+            }
+          }
+        }
+      
+        .block-info__description {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 100%;
+      
+          &-title {
+            h3 {
+              font-family: Rubik;
+              font-size: 24px;
+              font-weight: 700;
+              @media (min-width: 1700px) {
+                font-size: 44px;                
+            }
+            }
+      
+          }
+      
+          .block-info__icons {
+            display: flex;
+            justify-content: flex-end;
+            padding-bottom: 30px;
+            gap: 20px;
+      
+            .icons-item {
+              filter: drop-shadow(-4px -4px 20px rgba(255, 255, 255, 0.65)) drop-shadow(4px 4px 20px rgba(255, 255, 255, 0.65));
+              width: 70px;
+              height: 70px;
+      
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      
+      }
+      
+      .block-info__item-mini {
+        background:
+          radial-gradient(43.56% 75.24% at 50% 0%, rgba(92, 246, 236, 0.6) 10%, rgba(255, 255, 255, 0) 100%),
+          linear-gradient(0deg, #212843, #212843) padding-box,
+          linear-gradient(to left, #00FFF0, rgba(0, 0, 0, 0)) border-box;
+        border: 2px solid transparent;
+        box-shadow: 7px 10px 6px rgba(0, 0, 0, 0.25);
+        width: 750px;
+        height: 210px;
+        border-radius: 30px;
+        display: flex;
+        padding: 20px 50px 40px 30px;
+        box-sizing: border-box;
+        gap: 65px;
+        @media (min-width: 1700px) {
+            width: 100%;
+            height: 330px;   
+        }
+      
+        .block-info__planet {
+          .block-info__name {
+            margin-top: 13px;
+            font-family: Rubik;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            font-size: 16px;
+            @media (min-width: 1700px) {
+                font-size: 26px;                
+            }
+            .block-info__title {
+              p {
+                font-weight: 700;
+                font-size: 28px;
+              }
+            }
+      
+            .block-info__undertitle {
+              p {
+                font-style: italic;
+                font-size: 18px;
+                font-weight: 300;
+                @media (min-width: 1700px) {
+                    // line-height: 37px;
+                    font-size: 22px;                
+                }
+              }
+            }
+          }
+        }
+      
+        .block-info__description {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 100%;
+      
+          &-title {
+            h3 {
+              font-family: Rubik;
+              font-size: 28px;
+              font-weight: 700;
+              @media (min-width: 1700px) {
+                font-size: 44px;                
+            }
+            }
+      
+          }
+      
+          .block-info__icons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+      
+            .icons-item {
+              filter: drop-shadow(-4px -4px 20px rgba(255, 255, 255, 0.65)) drop-shadow(4px 4px 20px rgba(255, 255, 255, 0.65));
+              width: 70px;
+              height: 70px;
+      
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      
+      }
+}

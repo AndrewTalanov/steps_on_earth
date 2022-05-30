@@ -1,0 +1,20 @@
+@use "sass:math";
+
+// Стили для главного контента
+
+
+// Подключение стилей общих элементов проекта
+@import "common";
+
+// Подключение стилей отдельных блоков
+@import "header";
+@import "main";
+@import "footer";
+
+// Подключение стилей отдельных страниц
+// @import "home";
+@import "planetinfo";
+
+@import "definition";
+
+// @import "test";

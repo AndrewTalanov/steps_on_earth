@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Орозирий"
+})
+
+<body class="planetinfo" data-barba="wrapper">
+
+  <div class="loader">
+    <div class="page-transition"></div>
+  </div>
+
+  <main class="planetinfo-main" data-barba="container" data-barba-namespace="orozoriy">
+
+    @@include('html/_header-two.htm',{})
+
+
+    <section class="planet-info__container wrapper ">
+      <div class="planet-info__container__left ">
+        <div class="planet-img-container">
+          <img class="img-big-planet" src="@img/content/orozy-big.png" alt="big-planet-img">
+
+          <div class="icon icon-1 ">
+            <img src="@img/icons/nav-8.svg" alt="icon">
+          </div>
+          <div class="icon icon-2">
+            <img src="@img/icons/nav-7.svg" alt="icon">
+          </div>
+          <div class="icon icon-3">
+            <img src="@img/icons/nav-4.svg" alt="icon">
+          </div>
+          <div class="icon icon-4 active">
+            <img src="@img/icons/nav-1.svg" alt="icon">
+          </div>
+          <div class="icon icon-5">
+            <img src="@img/icons/nav-5.svg" alt="icon">
+          </div>
+          <div class="icon icon-6">
+            <img src="@img/icons/nav-3.svg" alt="icon">
+          </div>
+          <div class="icon icon-7">
+            <img src="@img/icons/nav-2.svg" alt="icon">
+          </div>
+        </div>
+      </div>
+
+      <div class="planet-info__container__right">
+
+        <div class="about-planet-container">
+          <h2>Орозирий</h2>
+          <h3>Средний (греч.)</h3>
+          <p>2,05 - 1,8 млрд </p>
+        </div>
+
+        <div class="planet-slider-container">
+          <div class="level-1">
+            <div class="numbers">
+              <div class="first">
+                <p>3</p>
+              </div>
+              <div class="palka">
+                <p>/</p>
+              </div>
+              <div class="second">
+                <p>4</p>
+              </div>
+            </div>
+            <div class="name">
+              <p>Палеопротерозой</p>
+            </div>
+          </div>
+          <div class="level-2">
+            <a href="Рясий.html" class="left">
+              <img src="@img/icons/arrow.svg" alt="arrow">
+            </a>
+            <a href="Статерий.html" class="right">
+              <img src="@img/icons/arrow.svg" alt="arrow">
+            </a>
+          </div>
+          <div class="progressbar">
+            <div class="progressbar-ch" style="width: calc((100% / 4) * 3)"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="reference__planet__container wrapper">
+      <div class="reference__planet__container-item">
+        <div class="reference-icon active">
+          <img src="@img/icons/nav-1.svg" alt="icon">
+        </div>
+
+        <div class="reference-information">
+          <p>
+            Вторая половина периода отмечена интенсивным горообразованием практически на всех континентах. Вероятно, в
+            течение орозирия атмосфера Земли стала окислительной (богатой кислородом), благодаря фотосинтезирующей
+            деятельности цианобактерий.
+            <br><br>
+            В орозирии Земля испытала два крупнейших из известных астероидных ударов. В начале периода, 2023 млн лет
+            назад, столкновение с крупным астероидом привело к образованию астроблемы Вредефорт. Ближе к концу периода
+            новый удар привёл к образованию медно-никелевого рудного бассейна в Садбери.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  @@include('html/_js.htm',{})
+
+</body>
+
+</html>

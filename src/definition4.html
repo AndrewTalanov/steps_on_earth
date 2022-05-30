@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Определения"
+})
+
+<body class="definitions" data-barba="wrapper">
+
+  <div class="loader">
+    <div class="page-transition"></div>
+  </div>
+
+  <main class="definitions-main" data-barba="container" data-barba-namespace="definition">
+
+    @@include('html/_header-two.htm',{})
+
+    <div class="wrapper">
+      <div class="content-inner">
+
+        <div id="content-id-0" class="content-ids">
+          <div class="content-text">
+            <p><span>Оледенение</span> - период общего похолодания климата, <br> продолжительностью несколько миллионов
+              лет, с неоднократными резкими разрастаниями оледенения материков и океанов (ледниковые эпохи и
+              межледниковья).
+              <br>Каждый этап оледенения изменял флору, фауну и геологию планеты.
+            </p>
+          </div>
+
+          <div class="content-periods">
+            <div class="content-periods-items">
+
+              <a href="криогений.html" class="item">
+                <img src="@img/content/criogeniy.png" alt="planet">
+                <div class="item__title">
+                  <h3>Криогений</h3>
+                </div>
+                <div class="item__description">
+                  <p>Рождение мороза</p>
+                </div>
+              </a>
+
+              <a href="сидерий.html" class="item">
+                <img src="@img/content/sideriy.png" alt="planet">
+                <div class="item__title">
+                  <h3>Сидерий</h3>
+                </div>
+                <div class="item__description">
+                  <p>Древний рассвет</p>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- @@include('html/_js.htm',{}) -->
+  </main>
+
+  @@include('html/_js.htm',{})
+
+</body>
+
+</html>

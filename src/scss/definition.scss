@@ -1,0 +1,80 @@
+.definitions {
+  scroll-behavior: smooth;
+  font-family: 'Rubik', sans-serif;
+  &-main {
+    width: 100%;
+    background: 100% 0 / cover  url("@img/back/gradient-definitions.png") no-repeat, 0 0 / 100% auto url("@img/back/stars.png") no-repeat, #08102E;
+    height: 100%;
+    min-height: 100vh;
+    padding: 0 0 100px 0;
+    .content-inner {
+      width: 90%;
+      margin: 130px auto 0 auto;
+
+      // .content-ids {
+      //   display: none;
+      // }
+
+      .content-text {
+        margin: 0 auto;
+        line-height: 23.7px;
+        font-size: 20px;
+        font-weight: 400;
+        span {
+          font-size: 32px;
+          font-weight: 900;
+        }
+      }
+      .content-periods {
+        margin-top: 80px;
+        &-items {
+          display: flex;
+          // justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 30px;
+          overflow: hidden;
+
+          .item {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 190px;
+            padding: 40px 0;
+            @media (min-width: 1520px) {
+              width: 210px;
+            }
+            img {
+              width: 120px;
+              z-index: 1;
+            }
+            &__title {
+              margin: 45px 0 11px 0;
+            }
+            &__description {
+              p {
+                text-align: center;
+              }
+            }
+            &::before {
+              z-index: 0;
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0px;
+              width: 100%;
+              height: 100%;
+              background: 0 0 / 100% 100% url("@img/back/planet-back.png") no-repeat;
+              opacity: 0;
+              transition: .5s;
+            }
+            &:hover::before { 
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

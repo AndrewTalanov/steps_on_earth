@@ -1,0 +1,548 @@
+.main-page-main {
+  background: url("@img/back/stars.png"),
+    100% 0 / 100% url("@img/back/gradient.png") no-repeat,
+    0 0 / 100% 165px url("@img/back/header.png") no-repeat, #08102e;
+  padding: 0 0 200px 0;
+
+  .bg-astro {
+    background: url("@img/back/back11.png") no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 2100px;
+    top: 190%;
+    background-position: right;
+    animation: move 8s linear infinite alternate;
+    z-index: 0;
+
+    @keyframes move {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(-37px, -40px);
+      }
+    }
+  }
+
+  .section-earth {
+    .wrapper {
+      .earth-container {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        .icons {
+          width: 70px;
+          height: 100%;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          gap: 40px;
+
+          .icon-container {
+            width: 50px;
+            height: 50px;
+          }
+
+          .icon-container-1,
+          .icon-container-3 {
+            margin-left: 50px;
+          }
+
+          .icon-container-4,
+          .icon-container-6 {
+            margin-right: 50px;
+          }
+
+          &-1 {
+            left: 17%;
+          }
+
+          &-2 {
+            right: 15%;
+          }
+        }
+
+        .earth-video {
+          #video {
+            width: 100%;
+          }
+        }
+      }
+
+      .earth-range {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 3px;
+
+        #myRange {
+          width: 100%;
+          z-index: 1;
+        }
+
+        .mask {
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          background-color: #8C94B4;
+
+          .dot {
+            z-index: 0;
+            position: absolute;
+            left: 0;
+            top: -3px;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+          }
+
+          .dot-0 {
+            background-color: #00FFF0;
+            top: -8px;
+            width: 20px;
+            height: 20px;
+          }
+
+          .dot-15 {
+            top: -8px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      /* Hides the slider so that custom slider can be made */
+      width: 1000px;
+      /* Specific width is required for Firefox. */
+      background: transparent;
+      /* Otherwise white in Chrome */
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+
+    input[type=range]:focus {
+      outline: none;
+      /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+
+
+    // фигня круглая
+    input[type=range]::-ms-track {
+      width: 1000px;
+      cursor: pointer;
+
+      /* Hides the slider so custom styles can be added */
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      // z-index: 2;
+      -webkit-appearance: none;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background: #00FFF0;
+      cursor: pointer;
+      margin-top: -3px;
+      /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    }
+
+    /* All the same stuff for Firefox */
+    input[type=range]::-moz-range-thumb {
+      // z-index: 2;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background: #00FFF0;
+      cursor: pointer;
+    }
+
+
+    // трек
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 1000px;
+      height: 3px;
+      cursor: pointer;
+      background: rgba($color: #000000, $alpha: 0);
+      border-radius: 1.3px;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+      background: rgba($color: #000000, $alpha: 0);
+    }
+
+    input[type=range]::-moz-range-track {
+      width: 1000px;
+      height: 3px;
+      cursor: pointer;
+      background: rgba($color: #000000, $alpha: 0);
+      border-radius: 1.3px;
+    }
+
+    input[type=range]::-ms-track {
+      width: 1000px;
+      height: 3px;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    input[type=range]::-ms-fill-lower {
+      background: rgba($color: #000000, $alpha: 0);
+      border-radius: 1.3px;
+    }
+
+    input[type=range]:focus::-ms-fill-lower {
+      background: rgba($color: #000000, $alpha: 0);
+    }
+
+    input[type=range]::-ms-fill-upper {
+      background: rgba($color: #000000, $alpha: 0);
+      border-radius: 1.3px;
+    }
+
+    input[type=range]:focus::-ms-fill-upper {
+      background: rgba($color: #000000, $alpha: 0);
+    }
+  }
+
+  .section-tabs {
+    margin-top: 220px;
+
+    .tabs {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &-animation {
+        z-index: 0;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 7px 10px 6px rgba(0, 0, 0, 0.25);
+        width: 47%;
+        height: 220px;
+
+        &__tab-1 {
+          border-radius: 0 30px 30px 0;
+          top: 0;
+          left: 0;
+        }
+
+        &__tab-2 {
+          border-radius: 30px 0 0 30px;
+          top: 0;
+          right: 0;
+          width: 44%;
+        }
+      }
+
+      &-items {
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+
+        &__item {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+
+          .tab-1 {
+            position: relative;
+            left: 15%;
+            opacity: 1;
+            transition: .5s;
+          }
+
+          .tab-2 {
+            opacity: .5;
+            transition: .5s;
+          }
+
+          .tab-1:hover,
+          .tab-2:hover {
+            opacity: .75;
+          }
+
+          .tab-1__description {
+            position: relative;
+            right: 20%;
+          }
+
+          .tab-2__description {
+            position: relative;
+            left: 60px;
+          }
+
+          h2 {
+            cursor: pointer;
+            font-size: 48px;
+            font-weight: 900;
+          }
+
+          p {
+            font-size: 28px;
+            font-style: italic;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+    .tab__content {
+      .tab {
+
+        // .tab__pane
+        &__pane {
+          // display: none;
+          margin-top: 135px;
+          display: flex;
+          flex-direction: column;
+          gap: 220px;
+
+          // &.active {
+          //     display: flex;
+          //     flex-direction: column;
+          //     gap: 220px;
+          // }
+
+          &__precambrian-container {
+            width: 100%;
+
+            .precambrian__container-item {
+              display: flex;
+              gap: 65px;
+              justify-content: center;
+              justify-content: space-between;
+
+              .phase__discription {
+                background: linear-gradient(rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0.1)),
+                  radial-gradient(49.88% 53.75% at 50% 0%,
+                    rgba(0, 255, 240, 0.5) 0%,
+                    rgba(255, 255, 255, 0) 100%);
+
+                width: 440px;
+                height: max-content;
+                border-radius: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                gap: 40px;
+
+                &-title {
+                  padding-top: 30px;
+
+                  & h2 {
+                    font-size: 32px;
+                  }
+
+                  & p {
+                    font-style: italic;
+                    padding-top: 20px;
+                    font-size: 20px;
+                  }
+                }
+
+                &-maturation {
+                  width: 48%;
+                  line-height: 24px;
+                  font-size: 20px;
+                  padding: 10px 0 32px 0;
+                }
+
+                &-phenomens {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-wrap: wrap;
+                  gap: 25px;
+                  width: 65%;
+                  padding-bottom: 30px;
+                }
+              }
+
+              .phase__image {
+                position: relative;
+                top: 70px;
+                .katarhey-moon-img {
+                  position: absolute;
+                  top: 63%;
+                  right: 75%;
+                  animation: moving 60s infinite linear;
+                  transform-origin: 150% -32%;
+                  z-index: 1;
+
+                  @keyframes moving {
+                    100% {
+                      transform: rotate(-360deg);                    
+                    }
+                  }
+                }
+                .katarhey-phase {
+                  position: inherit;
+                  z-index: 1;
+                }
+
+              }
+            }
+          }
+
+          .periods {
+            z-index: 1;
+            width: 85%;
+            margin: 0 auto;
+
+            #drop_2 {
+              margin-top: 40px;
+            }
+
+            &__title {
+              display: flex;
+              align-items: center;
+              gap: 30px;
+              // margin-bottom: 75px;
+
+              p {
+                font-size: 24px;
+              }
+
+              .dropdown-info {
+                cursor: pointer;
+              }
+            }
+
+            &-items {
+              opacity: 1;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              text-align: center;
+
+              &.fixwrap {
+                gap: 35px;
+              }
+
+              .panel {
+                padding: 0 18px;
+                background-color: white;
+              }
+
+              .group-wrapper {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                // margin-bottom: 50px;
+
+                &__title {
+                  text-align: center;
+                  width: 354px;
+                  height: 85px;
+                  border-radius: 30px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-direction: column;
+                  gap: 15px;
+
+                  a {
+                    font-weight: 600;
+                    font-size: 18px;
+                  }
+
+                  p {
+                    font-weight: 400;
+                    font-size: 12px;
+                    font-style: italic;
+                  }
+                }
+              }
+
+              .item {
+                cursor: pointer;
+                margin: 50px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 190px;
+                padding: 40px 0;
+                transition: 1s;
+                border-radius: 30px;
+                position: relative;
+
+                @media (min-width: 1520px) {
+                  width: 210px;
+                }
+
+                &::before {
+                  z-index: 0;
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0px;
+                  width: 100%;
+                  height: 100%;
+                  background: 0 0 / 100% 100% url("@img/back/planet-back.png") no-repeat;
+                  transition: 0.5s;
+                  opacity: 0;
+                }
+
+                &:hover::before {
+                  opacity: 1;
+                }
+
+                img {
+                  z-index: 1;
+                  width: 120px;
+                  margin-bottom: 35px;
+                }
+
+                &__title {
+                  margin-bottom: 11px;
+
+                  h3 {
+                    font-size: 16px;
+                    font-weight: 600;
+                  }
+                }
+
+                &__description {
+                  p {
+                    font-size: 12px;
+                    font-style: italic;
+                    color: $yellow;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #tab_2 {
+        display: none;
+      }
+    }
+  }
+}

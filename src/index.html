@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/_head.htm',{
+"title":"Периоды Земли"
+})
+
+<body class="main-page-body" data-barba="wrapper">
+
+	<div class="loader">
+		<div class="page-transition"></div>
+	</div>
+
+	<main data-barba="container" data-barba-namespace="home-section" class="main-page-main ">
+
+		@@include('html/_header.htm',{})
+
+		<section class="section-earth">
+
+			<div class="wrapper">
+				<div class="earth-container">
+
+					<div class="icons icons-1">
+						<div class="icon-container icon-container-1"></div>
+						<div class="icon-container icon-container-2"><img src="@img/icons/nav-1.svg" alt="icon"></div>
+						<div class="icon-container icon-container-3"></div>
+					</div>
+
+					<div class="earth-video">
+						<video id="video" playsinline="" muted="" preload="auto" loading="lazy">
+							<source src="@img/test2.mp4" type="video/mp4">
+						</video>
+					</div>
+
+					<div class="icons icons-2">
+						<div class="icon-container icon-container-4"></div>
+						<div class="icon-container icon-container-5"><img src="@img/icons/nav-2.svg" alt="icon"></div>
+						<div class="icon-container icon-container-6"></div>
+					</div>
+
+				</div>
+				<div class="earth-range">
+
+					<div class="mask">
+						<div class="dot dot-0"></div>
+						<div class="dot dot-1"></div>
+						<div class="dot dot-2"></div>
+						<div class="dot dot-3"></div>
+						<div class="dot dot-4"></div>
+						<div class="dot dot-5"></div>
+						<div class="dot dot-6"></div>
+						<div class="dot dot-7"></div>
+						<div class="dot dot-8"></div>
+						<div class="dot dot-9"></div>
+						<div class="dot dot-10"></div>
+						<div class="dot dot-11"></div>
+						<div class="dot dot-12"></div>
+						<div class="dot dot-13"></div>
+						<div class="dot dot-14"></div>
+						<div class="dot dot-15"></div>
+						<div class="dot dot-16"></div>
+						<div class="dot dot-17"></div>
+						<div class="dot dot-18"></div>
+						<div class="dot dot-19"></div>
+						<div class="dot dot-20"></div>
+						<div class="dot dot-21"></div>
+						<div class="dot dot-22"></div>
+						<div class="dot dot-23"></div>
+						<div class="dot dot-24"></div>
+						<div class="dot dot-25"></div>
+						<div class="dot dot-26"></div>
+					</div>
+
+					<input id="myRange" class="slider" type="range" step=".001" min="0" max="60" value="0">
+
+				</div>
+			</div>
+
+		</section>
+
+		<section class="section-tabs">
+			<div class="bg-astro"></div>
+			
+			<div class="tabs">
+
+				<div class="tabs-animation tabs-animation__tab-1"></div>
+				<div class="tabs-animation tabs-animation__tab-2"></div>
+
+				<div class="wrapper tabs-items">
+
+					<div data-tab="#tab_1" class="tabs-items__item tab-11">
+						<h2 class="tab-1">Докембрий</h2>
+						<p class="tab-description tab-1__description">Формирование геологии Земли</p>
+					</div>
+
+					<div data-tab="#tab_2" class="tabs-items__item tab-22">
+						<h2 class="tab-2">Фанерозой</h2>
+						<p class="tab-description tab-2__description">Появление жизни на Земле</p>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="tab__content wrapper">
+				<div id="tab_1" class="tab__pane active">
+					<div class="tab__pane__precambrian-container">
+						<div class="precambrian__container-item">
+							<a href="Катархей.html" class="phase__discription gradient-back-main">
+								<div class="phase__discription-title">
+									<h2>Катархей</h2>
+									<p>Ниже древнейшего</p>
+								</div>
+								<div class="phase__discription-maturation">
+									<p>4,6 млрд лет назад - 4 млрд лет назад</p>
+								</div>
+								<div class="phase__discription-phenomens">
+									<img src="@img/icons/nav-1.svg" alt="">
+									<img src="@img/icons/nav-8.svg" alt="">
+								</div>
+							</a>
+
+							<div class="phase__image">
+								<img class="katarhey-moon-img" src="@img/content/Katarhey_moon.png" alt="planet-moon">
+								<img class="katarhey-phase" src="@img/content/Katarhey.png" alt="planet-phase">
+							</div>
+						</div>
+					</div>
+
+					<div class="tab__pane__precambrian-container">
+						<div class="precambrian__container-item">
+							<a href="архей.html" class="phase__discription gradient-back-main">
+								<div class="phase__discription-title">
+									<h2>Архей</h2>
+									<p>Древний</p>
+								</div>
+								<div class="phase__discription-maturation">
+									<p>4 млрд лет назад - 3,6 млрд лет назад</p>
+								</div>
+								<div class="phase__discription-phenomens">
+									<img src="@img/icons/nav-1.svg" alt="">
+									<img src="@img/icons/nav-2.svg" alt="">
+									<img src="@img/icons/nav-4.svg" alt="">
+									<img src="@img/icons/nav-7.svg" alt="">
+								</div>
+							</a>
+
+							<div class="phase__image">
+
+								<img src="@img/content/Arhey.png" alt="planet-phase">
+							</div>
+						</div>
+					</div>
+
+					<div class="periods">
+
+						<div class="periods__title">
+							<p>Периоды</p>
+							<a class="dropdown-info">
+								<img src="@img/icons/arrow.svg" alt="arrow">
+							</a>
+						</div>
+
+						<div id="drop_1" class="periods-items">
+							<a href="Эоархей.html">
+								<div class="item item-1 ">
+									<img src="@img/content/zoarhey.png" alt="planet">
+									<div class="item__title">
+										<h3>Эоархей</h3>
+									</div>
+									<div class="item__description">
+										<p>Древний рассвет</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="Палеоархей.html">
+								<div class="item item-1">
+									<img src="@img/content/paleoarhey.png" alt="planet">
+									<div class="item__title">
+										<h3>Палеоархей</h3>
+									</div>
+									<div class="item__description">
+										<p>Старший</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="мезоархей.html">
+								<div class="item item-1">
+									<img src="@img/content/mezoarhey.png" alt="planet">
+									<div class="item__title">
+										<h3>Мезоархей</h3>
+									</div>
+									<div class="item__description">
+										<p>Средний</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="неоархей.html">
+								<div class="item item-1">
+									<img src="@img/content/neoarhey.png" alt="planet">
+									<div class="item__title">
+										<h3>Неоархей</h3>
+									</div>
+									<div class="item__description">
+										<p>Новый</p>
+									</div>
+								</div>
+							</a>
+
+						</div>
+					</div>
+
+					<div class="tab__pane__precambrian-container">
+						<div class="precambrian__container-item">
+							<a href="протерозой.html" class="phase__discription gradient-back-main">
+								<div class="phase__discription-title">
+									<h2>Протерозой</h2>
+									<p>Старшая жизнь</p>
+								</div>
+								<div class="phase__discription-maturation">
+									<p>2,5 млрд лет назад - 0,2 млн лет назад</p>
+								</div>
+								<div class="phase__discription-phenomens">
+									<img src="@img/icons/nav-1.svg" alt="">
+									<img src="@img/icons/nav-2.svg" alt="">
+									<img src="@img/icons/nav-4.svg" alt="">
+									<img src="@img/icons/nav-7.svg" alt="">
+									<img src="@img/icons/nav-3.svg" alt="">
+									<img src="@img/icons/nav-5.svg" alt="">
+									<img src="@img/icons/nav-6.svg" alt="">
+								</div>
+							</a>
+
+							<div class="phase__image">
+
+								<img src="@img/content/Proterozoy.png" alt="planet-phase">
+							</div>
+						</div>
+					</div>
+
+					<div class="periods">
+						<div class="periods__title">
+							<p>Периоды</p>
+							<a class="dropdown-info ">
+								<img src="@img/icons/arrow.svg" alt="arrow">
+							</a>
+						</div>
+
+						<div id="drop_2" class="periods-items">
+							<div class="group-wrapper">
+								<div class="group-wrapper__title gradient-back-main">
+									<a href="палеопротерозой.html">Палеопротерозой</a>
+									<p>Старая эра</p>
+								</div>
+							</div>
+							<a href="сидерий.html">
+								<div class="item item-2">
+									<img src="@img/content/sideriy.png" alt="planet">
+									<div class="item__title">
+										<h3>Сидерий</h3>
+									</div>
+									<div class="item__description">
+										<p>Железо</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="Рясий.html">
+								<div class="item item-2">
+									<img src="@img/content/riasiy.png" alt="planet">
+									<div class="item__title">
+										<h3>Рясий</h3>
+									</div>
+									<div class="item__description">
+										<p>Поток лавы</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="Орозирий.html">
+								<div class="item item-2">
+									<img src="@img/content/oroziriy.png" alt="planet">
+									<div class="item__title">
+										<h3>Орозирий</h3>
+									</div>
+									<div class="item__description">
+										<p>Горная цепь</p>
+									</div>
+								</div>
+
+							</a>
+
+							<a href="Статерий.html">
+								<div class="item item-2">
+									<img src="@img/content/stateriy.png" alt="planet">
+									<div class="item__title">
+										<h3>Статерий</h3>
+									</div>
+									<div class="item__description">
+										<p>Устойчивый</p>
+									</div>
+								</div>
+							</a>
+
+							<div class="group-wrapper">
+								<div class="group-wrapper__title gradient-back-main">
+									<a href="мезопротерозой.html">Мезопротерозой</a>
+									<p>Скучный миллиард</p>
+								</div>
+							</div>
+
+							<a href="Калимий.html">
+								<div class="item item-2">
+									<img src="@img/content/kalimiy.png" alt="planet">
+									<div class="item__title">
+										<h3>Калимий</h3>
+									</div>
+									<div class="item__description">
+										<p>Покров</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="Эктазий.html">
+								<div class="item item-2">
+									<img src="@img/content/extaziy.png" alt="planet">
+									<div class="item__title">
+										<h3>Эктазий</h3>
+									</div>
+									<div class="item__description">
+										<p>Расширенный</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="стений.html">
+								<div class="item item-2">
+									<img src="@img/content/steniy.png" alt="planet">
+									<div class="item__title">
+										<h3>Стений</h3>
+									</div>
+									<div class="item__description">
+										<p>Узкий</p>
+									</div>
+								</div>
+							</a>
+
+
+							<div class="group-wrapper">
+								<div class="group-wrapper__title gradient-back-main">
+									<a href="неопротерозой.html">Неопротерозой</a>
+									<p>Новая жизнь</p>
+								</div>
+							</div>
+
+							<a href="Тоний.html">
+								<div class="item item-2">
+									<img src="@img/content/toniy.png" alt="planet">
+									<div class="item__title">
+										<h3>Тоний</h3>
+									</div>
+									<div class="item__description">
+										<p>Натяжение</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="криогений.html">
+								<div class="item item-2">
+									<img src="@img/content/criogeniy.png" alt="planet">
+									<div class="item__title">
+										<h3>Криогений</h3>
+									</div>
+									<div class="item__description">
+										<p>Рождение мороза</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="эдиакарий.html">
+								<div class="item item-2">
+									<img src="@img/content/edikariy.png" alt="planet">
+									<div class="item__title">
+										<h3>Эдиакарий</h3>
+									</div>
+									<div class="item__description">
+										<p>Возвышенность <br>
+											в Южной Австралии</p>
+									</div>
+								</div>
+							</a>
+
+						</div>
+					</div>
+				</div>
+
+				<div id="tab_2" class="tab__pane">
+					<div class="tab__pane__precambrian-container">
+						<div class="precambrian__container-item">
+							<a href="палеозой.html" class="phase__discription gradient-back-main">
+								<div class="phase__discription-title">
+									<h2>Палеозой</h2>
+									<p>Древняя жизнь</p>
+								</div>
+								<div class="phase__discription-maturation">
+									<p>541 - 252 млн лет назад</p>
+								</div>
+								<div class="phase__discription-phenomens">
+									<img src="@img/icons/nav-1.svg" alt="">
+									<img src="@img/icons/nav-8.svg" alt="">
+								</div>
+							</a>
+							<div class="phase__image">
+								<img src="@img/content/Poleozoy.png" alt="planet-phase">
+							</div>
+						</div>
+					</div>
+
+					<div class="periods">
+						<div class="periods__title">
+							<p>Периоды</p>
+							<a class="dropdown-info">
+								<img src="@img/icons/arrow.svg" alt="arrow">
+							</a>
+						</div>
+
+						<div id="drop_3" class="periods-items fixwrap">
+							<a href="кембрий.html">
+								<div class="item item-3">
+									<img src="@img/content/kembriy.png" alt="planet">
+									<div class="item__title">
+										<h3>Кембрий</h3>
+									</div>
+									<div class="item__description">
+										<p>Уэльс</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="Ордовик.html">
+								<div class="item item-3">
+									<img src="@img/content/ordovik.png" alt="planet">
+									<div class="item__title">
+										<h3>Ордовик</h3>
+									</div>
+									<div class="item__description">
+										<p>Племя <br>
+											с молотами</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="силур.html">
+								<div class="item item-3">
+									<img src="@img/content/silur.png" alt="planet">
+									<div class="item__title">
+										<h3>Силур</h3>
+									</div>
+									<div class="item__description">
+										<p>Кельтское <br> племя</p>
+									</div>
+								</div>
+							</a>
+							<a href="девон.html">
+								<div class="item item-3">
+									<img src="@img/content/devon.png" alt="planet">
+									<div class="item__title">
+										<h3>Девон</h3>
+									</div>
+									<div class="item__description">
+										<p>Графство <br> Девоншир</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="карбон.html">
+								<div class="item item-3">
+									<img src="@img/content/carbon.png" alt="planet">
+									<div class="item__title">
+										<h3>Карбон</h3>
+									</div>
+									<div class="item__description">
+										<p>Каменно-угольный</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="пермь.html">
+								<div class="item item-3">
+									<img src="@img/content/perm.png" alt="planet">
+									<div class="item__title">
+										<h3>Пермь</h3>
+									</div>
+									<div class="item__description">
+										<p>Пермская <br> губерния</p>
+									</div>
+								</div>
+							</a>
+
+						</div>
+					</div>
+
+					<div class="tab__pane__precambrian-container">
+						<div class="precambrian__container-item">
+							<a href="мезозой.html" class="phase__discription gradient-back-main">
+								<div class="phase__discription-title">
+									<h2>Мезозой</h2>
+									<p>Средняя жизнь</p>
+								</div>
+								<div class="phase__discription-maturation">
+									<p>252 - 66 млн лет назад</p>
+								</div>
+								<div class="phase__discription-phenomens">
+									<img src="@img/icons/nav-1.svg" alt="">
+									<img src="@img/icons/nav-2.svg" alt="">
+									<img src="@img/icons/nav-4.svg" alt="">
+									<img src="@img/icons/nav-7.svg" alt="">
+								</div>
+							</a>
+							<div class="phase__image">
+								<img src="@img/content/Mezozoy.png" alt="planet-phase">
+							</div>
+						</div>
+					</div>
+
+					<div class="periods">
+						<div class="periods__title">
+							<p>Периоды</p>
+							<a class="dropdown-info">
+								<img src="@img/icons/arrow.svg" alt="arrow">
+							</a>
+						</div>
+						<div id="drop_4" class="periods-items">
+
+							<a href="триас.html">
+								<div class="item item-4">
+									<img src="@img/content/trias.png" alt="planet">
+									<div class="item__title">
+										<h3>Триас</h3>
+									</div>
+									<div class="item__description">
+										<p>Трёхслойный</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="Юра.html">
+								<div class="item item-4">
+									<img src="@img/content/ura.png" alt="planet">
+									<div class="item__title">
+										<h3>Юра</h3>
+									</div>
+									<div class="item__description">
+										<p>Горный массив <br> Европы</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="мел.html">
+								<div class="item item-4">
+									<img src="@img/content/mel.png" alt="planet">
+									<div class="item__title">
+										<h3>Мел</h3>
+									</div>
+									<div class="item__description">
+										<p>Известняк</p>
+									</div>
+								</div>
+							</a>
+
+						</div>
+					</div>
+
+					<div class="tab__pane__precambrian-container">
+						<div class="precambrian__container-item">
+							<a href="кайнозой.html" class="phase__discription gradient-back-main">
+								<div class="phase__discription-title">
+									<h2>Кайнозой</h2>
+									<p>Новая жизнь</p>
+								</div>
+								<div class="phase__discription-maturation">
+									<p>66 млн лет назад = наши дни</p>
+								</div>
+								<div class="phase__discription-phenomens">
+									<img src="@img/icons/nav-1.svg" alt="">
+									<img src="@img/icons/nav-2.svg" alt="">
+									<img src="@img/icons/nav-4.svg" alt="">
+									<img src="@img/icons/nav-7.svg" alt="">
+									<img src="@img/icons/nav-3.svg" alt="">
+									<img src="@img/icons/nav-5.svg" alt="">
+									<img src="@img/icons/nav-6.svg" alt="">
+								</div>
+							</a>
+							<div class="phase__image">
+								<img src="@img/content/Kaynozoy.png" alt="planet-phase">
+							</div>
+						</div>
+					</div>
+
+					<div class="periods">
+						<div class="periods__title">
+							<p>Периоды</p>
+							<a class="dropdown-info">
+								<img src="@img/icons/arrow.svg" alt="arrow">
+							</a>
+						</div>
+						<div id="drop_5" class="periods-items">
+
+							<a href="палеоген.html">
+								<div class="item item-5">
+									<img src="@img/content/paleogen.png" alt="planet">
+									<div class="item__title">
+										<h3>Палеоген</h3>
+									</div>
+									<div class="item__description">
+										<p>Рождение</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="Неоген.html">
+								<div class="item item-5">
+									<img src="@img/content/neogen.png" alt="planet">
+									<div class="item__title">
+										<h3>Неоген</h3>
+									</div>
+									<div class="item__description">
+										<p>Новый возраст</p>
+									</div>
+								</div>
+							</a>
+
+							<a href="Четвертичный.html">
+								<div class="item item-5">
+									<img src="@img/content/chetverticniy.png" alt="planet">
+									<div class="item__title">
+										<h3>Четвертичный</h3>
+									</div>
+									<div class="item__description">
+										<p>Антропоген</p>
+									</div>
+								</div>
+							</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- @@include('html/_js.htm',{}) -->
+	</main>
+	<!-- @@include('html/_footer.htm',{}) -->
+
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

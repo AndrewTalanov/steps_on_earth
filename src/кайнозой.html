@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Кайнозой"
+})
+
+<body class="planetinfo" data-barba="wrapper">
+
+  <div class="loader">
+    <div class="page-transition"></div>
+  </div>
+
+  <main class="planetinfo-main" data-barba="container" data-barba-namespace="kainozoy-era">
+
+    @@include('html/_header-two.htm',{})
+
+
+    <section class="planet-info__container wrapper ">
+
+      <div class="planet-info__container__eras">
+
+        <div class="about-planet-container">
+          <h2>Кайнозой</h2>
+          <h3>Новая жизнь (греч.)
+          </h3>
+          <p>66 млн. лет назад - наши дни</p>
+        </div>
+
+        <div class="planet-slider-container">
+          <div class="level-1">
+            <div class="numbers">
+              <div class="first">
+                <p>3</p>
+              </div>
+              <div class="palka">
+                <p>/</p>
+              </div>
+              <div class="second">
+                <p>3</p>
+              </div>
+            </div>
+            <div class="name">
+              <p>Фанерозой</p>
+            </div>
+          </div>
+          <div class="level-2">
+            <a href="мезозой.html" class="left">
+              <img src="@img/icons/arrow.svg" alt="arrow">
+            </a>
+            <a href="палеозой.html" class="right">
+              <img src="@img/icons/arrow.svg" alt="arrow">
+            </a>
+          </div>
+          <div class="progressbar">
+            <div class="progressbar-ch" style="width: calc((100% / 3) * 3)"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="reference__planet__container wrapper">
+      <div class="reference__planet__container-item">
+        <div class="reference-icon active">
+          <img src="@img/icons/nav-1.svg" alt="icon">
+        </div>
+
+        <div class="reference-information">
+          <p>
+            текущая эра геологической истории Земли. Началась 66,0 миллионов лет назад (эта граница проведена по
+            массовому вымиранию видов в конце мелового периода) и продолжается до сих пор.
+            <br><br>
+            Эра характеризуется доминированием млекопитающих и птиц, занявших многочисленные экологические ниши,
+            оставленные вымершими рептилиями. Среди растений на суше преобладают цветковые. В океанах основной группой
+            рыб становятся лучепёрые.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="era_container wrapper">
+
+      <a href="палеоген.html">
+        <div class="block-info__item">
+          <div class="block-info__planet">
+            <img src="@img/content/paleogen-mini.png" alt="planet" class="block-info__planet">
+            <div class="block-info__name">
+              <div class="block-info__title">
+                <p>Палеоген</p>
+              </div>
+              <div class="block-info__undertitle">
+                <p>Рождение</p>
+              </div>
+            </div>
+          </div>
+          <div class="block-info__description">
+            <div class="block-info__description-title">
+              <h3>Расцвет млекопитающих</h3>
+            </div>
+            <div class="block-info__icons">
+              <div class="icons-item">
+                <img src="@img/icons/nav-4.svg" alt="icon">
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="Неоген.html">
+        <div class="block-info__item">
+          <div class="block-info__planet">
+            <img src="@img/content/neogen-mini.png" alt="planet" class="block-info__planet">
+            <div class="block-info__name">
+              <div class="block-info__title">
+                <p>Неоген</p>
+              </div>
+              <div class="block-info__undertitle">
+                <p>Новый возраст</p>
+              </div>
+            </div>
+          </div>
+          <div class="block-info__description">
+            <div class="block-info__description-title">
+              <h3>Приближение к современности</h3>
+            </div>
+            <div class="block-info__icons">
+              <div class="icons-item">
+                <img src="@img/icons/nav-3.svg" alt="icon">
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+
+      <a href="Четвертичный.html">
+        <div class="block-info__item">
+          <div class="block-info__planet">
+            <img src="@img/content/chetverticny-mini.png" alt="planet" class="block-info__planet">
+            <div class="block-info__name">
+              <div class="block-info__title">
+                <p>Четвертичный</p>
+              </div>
+              <div class="block-info__undertitle">
+                <p>Антропоген</p>
+              </div>
+            </div>
+          </div>
+          <div class="block-info__description">
+            <div class="block-info__description-title">
+              <h3>Появление человека</h3>
+            </div>
+            <div class="block-info__icons">
+              <div class="icons-item">
+                <img src="@img/icons/nav-4.svg" alt="icon">
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </section>
+
+  </main>
+
+  @@include('html/_js.htm',{})
+
+</body>
+
+</html>
