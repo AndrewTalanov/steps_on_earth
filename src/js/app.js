@@ -725,15 +725,6 @@ function togglePeriods() {
 
 }
 
-// const parallax = document.querySelector('.bg-astro');
-// window.addEventListener('mousemove', function(e) {
-//   let x = e.clientX / window.innerWidth;
-//   let y = e.clientY / window.innerHeight;  
-//   parallax.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
-// });
-
-
-
 
 // 1. Переход между страницами определений
 // страница с определениями одна (data-barba-namespace), но контент для нее разный
