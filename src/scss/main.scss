@@ -1,7 +1,8 @@
 .main-page-main {
   background: url("@img/back/stars.png"),
-    100% 0 / 100% url("@img/back/gradient.png") no-repeat,
-    0 0 / 100% 165px url("@img/back/header.png") no-repeat, #08102e;
+    0 1000px / 100% url("@img/back/gradient.png") no-repeat,
+    // 0 0 / 100% 165px url("@img/back/header.png") no-repeat,
+     #08102e;
   padding: 0 0 200px 0;
 
   .bg-astro {
@@ -35,6 +36,7 @@
         .icons {
           width: 70px;
           height: 100%;
+          // top: -480px;
           position: absolute;
           display: flex;
           align-items: center;
@@ -326,6 +328,7 @@
 
           &__precambrian-container {
             width: 100%;
+            z-index: 1;
 
             .precambrian__container-item {
               display: flex;

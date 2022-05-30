@@ -478,7 +478,7 @@ function animationToggleNavMenu() {
 
 // 1. Анимация первого включения страницы
 function pageAnimOnce() {
-  var tt = anime.timeline({
+  var ttt = anime.timeline({
     easing: 'easeOutExpo',
     duration: 800
   });
@@ -489,7 +489,7 @@ function pageAnimOnce() {
   //   scaleY: [0, 500],
   //   easing: 'easeInOutQuad'
   // });
-  tt.
+  ttt.
   add({
     targets: '.page-transition',
     delay: 300,
@@ -505,11 +505,21 @@ function pageAnimIn() {
     easing: 'easeOutExpo',
     duration: 800
   });
+  var tte = anime.timeline({
+    easing: 'easeOutExpo',
+    duration: 800
+  });
   tt.
   add({
     targets: '.page-transition',
     scaleX: [0, 500],
     scaleY: [0, 500],
+    easing: 'easeInOutQuad'
+  });
+  tte.
+  add({
+    targets: '.loader img',
+    opacity: [0, 1],
     easing: 'easeInOutQuad'
   });
   tt.
