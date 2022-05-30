@@ -119,10 +119,11 @@ a {
     border-radius: 50%;
     transform: scale(0);
   }
-  img {
-    margin: auto;
-    width: 400px;
-    height: 400px;
-    opacity: 1;
-  }
+  // img {
+  //   margin: auto;
+  //   width: 400px;
+  //   height: 400px;
+  //   opacity: 0;
+  //   pointer-events: none;
+  // }
 }

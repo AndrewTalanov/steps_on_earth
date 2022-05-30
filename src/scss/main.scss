@@ -27,6 +27,13 @@
   }
 
   .section-earth {
+    .earth-video {
+      margin: 0 auto;
+      width: 80%;
+      #video {
+        width: 100%;
+      }
+    }
     .wrapper {
       .earth-container {
         display: flex;
@@ -36,7 +43,7 @@
         .icons {
           width: 70px;
           height: 100%;
-          // top: -480px;
+          top: -420px;
           position: absolute;
           display: flex;
           align-items: center;
@@ -68,14 +75,11 @@
           }
         }
 
-        .earth-video {
-          #video {
-            width: 100%;
-          }
-        }
+        // еуе
       }
 
       .earth-range {
+        top: -50px;
         position: relative;
         width: 100%;
         display: flex;

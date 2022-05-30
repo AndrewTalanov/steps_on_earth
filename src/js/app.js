@@ -516,12 +516,6 @@ function pageAnimIn() {
     scaleY: [0, 500],
     easing: 'easeInOutQuad'
   });
-  tte.
-  add({
-    targets: '.loader img',
-    opacity: [0, 1],
-    easing: 'easeInOutQuad'
-  });
   tt.
   add({
     targets: '.page-transition',
@@ -530,6 +524,25 @@ function pageAnimIn() {
     scaleY: [500, 0],
     easing: 'easeInOutQuad'
   });
+  // tte.
+  // add({
+  //   targets: '.loader img',
+  //   opacity: [0, 1],
+  //   easing: 'easeInOutQuad'
+  // });
+  // tte.
+  // add({
+  //   targets: '.loader img',
+  //   delay: 500,
+  //   opacity: 1,
+  //   easing: 'easeInOutQuad'
+  // });
+  // tte.
+  // add({
+  //   targets: '.loader img',
+  //   opacity: [1, 0],
+  //   easing: 'easeInOutQuad'
+  // });
 }
 
 // 1. Анимация переключения табов (на главной) (срабатывает только при открытии сайта)
