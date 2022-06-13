@@ -99,6 +99,11 @@ a {
   box-shadow: 7px 10px 6px rgba(0, 0, 0, 0.25);
 }
 
+.end {
+  display: flex;
+  justify-content: center;
+}
+
 .loader {
   position: fixed;
   left: 0;
@@ -113,17 +118,18 @@ a {
 
   .page-transition {
     position: absolute;
-    background-color: #162c7a;
+    // background-color: #162c7a;
+    background-color: #080b16;
     width: 10px;
     height: 10px;
     border-radius: 50%;
     transform: scale(0);
   }
-  // img {
-  //   margin: auto;
-  //   width: 400px;
-  //   height: 400px;
-  //   opacity: 0;
-  //   pointer-events: none;
-  // }
+  img {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+    pointer-events: none;
+  }
 }

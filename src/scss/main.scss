@@ -3,7 +3,7 @@
     0 1000px / 100% url("@img/back/gradient.png") no-repeat,
     // 0 0 / 100% 165px url("@img/back/header.png") no-repeat,
     #081130;
-  padding: 0 0 200px 0;
+  // padding: 0 0 200px 0;
 
   .bg-astro {
     background: url("@img/back/back11.png") no-repeat;
@@ -322,7 +322,7 @@
           margin-top: 135px;
           display: flex;
           flex-direction: column;
-          gap: 220px;
+          gap: 150px;
 
           // &.active {
           //     display: flex;
@@ -503,7 +503,7 @@
                 }
 
                 &::before {
-                  z-index: 0;
+                  z-index: -10;
                   content: "";
                   position: absolute;
                   top: 0;

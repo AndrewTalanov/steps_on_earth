@@ -321,16 +321,6 @@ function changeIcon(idTiming) {
     [1, 7, 3, 4],
     // 17 Ордовик
     [1, 3, 4, 6],
-
-    // 1 - общая информация
-    // 2 - флора
-    // 3 - фауна
-    // 4 - геология
-    // 5 - оледенение 
-    // 6 - вымирание
-    // 7 - температура
-    // 8 - небесные тела
-
     // 18 Силур
     [1, 2, 3, 7],
     // 19 Девон
@@ -355,6 +345,36 @@ function changeIcon(idTiming) {
     [1, 3],
   ];
 
+  const linksForPeriods = [
+    "Катархей",
+    "Эоархей",
+    "Палеоархей",
+    "Мезоархей",
+    "неоархей",
+    "сидерий",
+    "Рясий",
+    "Орозий",
+    "Статерий",
+    "Калимий",
+    "Эктазий",
+    "стений",
+    "Тоний",
+    "криогений",
+    "эдиакарий",
+    "кембрий",
+    "Ордовик",
+    "силур",
+    "девон",
+    "карбон",
+    "пермь",
+    "триас",
+    "Юра",
+    "мел",
+    "палеоген",
+    "Неоген",
+    "Четвертичный",
+  ];
+
   let nmb = numbersIconForPeriods[idTiming];
 
   iconContainer.forEach((item, id) => {
@@ -367,17 +387,17 @@ function changeIcon(idTiming) {
       flag = id;
 
       if (flag == 0) {
-        iconContainer[1].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+        iconContainer[1].innerHTML = `<a href="${linksForPeriods[idTiming]}.html"><img src="img/icons/nav-${nmb[id]}.svg" alt="icon"></a>`;
       } else if (flag == 1) {
-        iconContainer[4].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+        iconContainer[4].innerHTML = `<a href="${linksForPeriods[idTiming]}.html"><img src="img/icons/nav-${nmb[id]}.svg" alt="icon"></a>`;
       } else if (flag == 2) {
-        iconContainer[0].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+        iconContainer[0].innerHTML = `<a href="${linksForPeriods[idTiming]}.html"><img src="img/icons/nav-${nmb[id]}.svg" alt="icon"></a>`;
       } else if (flag == 3) {
-        iconContainer[2].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+        iconContainer[2].innerHTML = `<a href="${linksForPeriods[idTiming]}.html"><img src="img/icons/nav-${nmb[id]}.svg" alt="icon"></a>`;
       } else if (flag == 4) {
-        iconContainer[3].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+        iconContainer[3].innerHTML = `<a href="${linksForPeriods[idTiming]}.html"><img src="img/icons/nav-${nmb[id]}.svg" alt="icon"></a>`;
       } else if (flag == 5) {
-        iconContainer[5].innerHTML = `<img src="img/icons/nav-${nmb[id]}.svg" alt="icon">`;
+        iconContainer[5].innerHTML = `<a href="${linksForPeriods[idTiming]}.html"><img src="img/icons/nav-${nmb[id]}.svg" alt="icon"></a>`;
       }
     }
 
@@ -503,11 +523,11 @@ function pageAnimOnce() {
 function pageAnimIn() {
   var tt = anime.timeline({
     easing: 'easeOutExpo',
-    duration: 800
+    duration: 900
   });
   var tte = anime.timeline({
     easing: 'easeOutExpo',
-    duration: 800
+    duration: 900
   });
   tt.
   add({
@@ -524,25 +544,18 @@ function pageAnimIn() {
     scaleY: [500, 0],
     easing: 'easeInOutQuad'
   });
-  // tte.
-  // add({
-  //   targets: '.loader img',
-  //   opacity: [0, 1],
-  //   easing: 'easeInOutQuad'
-  // });
-  // tte.
-  // add({
-  //   targets: '.loader img',
-  //   delay: 500,
-  //   opacity: 1,
-  //   easing: 'easeInOutQuad'
-  // });
-  // tte.
-  // add({
-  //   targets: '.loader img',
-  //   opacity: [1, 0],
-  //   easing: 'easeInOutQuad'
-  // });
+  tte.
+  add({
+    targets: '.loader-gif',
+    opacity: [0, 1],
+    easing: 'easeInOutQuad'
+  });
+  tte.
+  add({
+    targets: '.loader-gif',
+    opacity: [1, 0],
+    easing: 'easeInOutQuad'
+  });
 }
 
 // 1. Анимация переключения табов (на главной) (срабатывает только при открытии сайта)
@@ -750,27 +763,24 @@ function togglePeriods() {
         duration: 300,
       });
 
-      const interval = 400;
-
       if (window.getComputedStyle(contentDrop[id]).opacity == 1) {
 
-        let item = "." + contentDrop[id].className + " .item";
+        let item = "#" + contentDrop[id].id + " .item";
 
         console.log(contentDrop[id]);
 
         showArrowContentAnimation
+        // поворот на 90 градусов стрелки
           .add({
             targets: btnDrop[id],
             rotate: -90,
-          })
-          .add({
-            targets: item,
-            translateY: [0, -50],
-            easing: 'easeOutSine',
+            duration: 200,
           })
           .add({
             targets: contentDrop[id],
+            duration: 500,
             opacity: [1, 0],
+            translateY: [0, -60],
             easing: 'easeInOutQuad',
           })
           .add({
@@ -779,18 +789,19 @@ function togglePeriods() {
               contentDrop[id].style.display = 'none';
             },
             easing: 'easeInOutQuad',
-          });
+          })
 
 
       } else if (window.getComputedStyle(contentDrop[id]).opacity == 0) {
 
-        let item = "." + contentDrop[id].className + " .item";
+        let item = "#" + contentDrop[id].id + " .item";
 
         showArrowContentAnimation
 
           .add({
             targets: btnDrop[id],
             rotate: 0,
+            duration: 200,
           })
           .add({
             targets: contentDrop[id],
@@ -799,19 +810,21 @@ function togglePeriods() {
             },
             easing: 'easeInOutQuad',
           })
-
           .add({
             targets: contentDrop[id],
-            opacity: 1,
+            duration: 300,
+            opacity: [0, 1],
+            translateY: [-60, 0],
             easing: 'easeInOutQuad',
           })
+          
 
-          .add({
-            targets: item,
-            translateY: [-50, 0],
-            delay: anime.stagger(200),
-            easing: 'easeOutSine',
-          })
+          // .add({
+          //   targets: item,
+          //   translateY: [-50, 0],
+          //   delay: anime.stagger(200),
+          //   easing: 'easeOutSine',
+          // })
       }
     });
   });

@@ -1,0 +1,41 @@
+.literature {
+  &-main {
+    padding: 0 0 300px 0;
+    width: 100%;
+    min-height: 100vh;
+    background:
+      150px -50px / 100% url("@img/back/back11.png") no-repeat,
+      url("@img/back/stars.png") no-repeat,
+      100% 0px / 100% 100% url("@img/back/gr.png") no-repeat,
+      #08102E;
+
+    .orange {
+      color: #FFFCC0;
+    }
+
+    h2 {
+      margin-top: 140px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    &__list {
+      width: 40%;
+      margin: 0 auto;
+      h3 {
+        margin-top: 68px;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 20px;
+      }
+
+      p {
+        margin-top: 10px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+  }
+}

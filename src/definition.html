@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('html/_head.htm',{
-"title":"Определения"
+"title":"Общие сведения"
 })
 
 <body class="definitions" data-barba="wrapper">
 
   <div class="loader">
-    <div class="page-transition"></div>
-  </div>
+		<div class="page-transition">
+		</div>
+		<img class="loader-gif" src="@img/load.gif" alt="load">
+	</div>
 
   <main class="definitions-main" data-barba="container" data-barba-namespace="definition">
 
@@ -317,9 +319,12 @@
         </div>
       </div>
     </div>
-
+    <section class="end">
+			<a href="литература.html"><img src="@img/маскот_главная.gif" alt="литература"></a>	
+		</section>
     <!-- @@include('html/_js.htm',{}) -->
   </main>
+  
 
   @@include('html/_js.htm',{})
 
